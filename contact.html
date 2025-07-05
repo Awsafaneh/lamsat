@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصل بنا - لمسات للديكور</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Dyslexic&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="accessibility-toolbar">
+        <button onclick="toggleDarkMode()" title="وضع الليل/النهار"><i class="fas fa-moon"></i></button>
+        <button onclick="changeTextSize('small')" title="حجم الخط صغير">A-</button>
+        <button onclick="changeTextSize('normal')" title="حجم الخط عادي">A</button>
+        <button onclick="changeTextSize('large')" title="حجم الخط كبير">A+</button>
+        <button onclick="toggleHighContrast()" title="وضع التباين العالي"><i class="fas fa-adjust"></i></button>
+        <button onclick="toggleDyslexicFont()" title="خط عسر القراءة"><i class="fas fa-font"></i></button>
+    </div>
+
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h2>لمسات للديكور</h2>
+                    <span>Lamsat Al Dekor</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">الرئيسية</a></li>
+                    <li><a href="services.html" class="nav-link">خدماتنا</a></li>
+                    <li><a href="gallery.html" class="nav-link">معرض الأعمال</a></li>
+                    <li><a href="contact.html" class="nav-link active">اتصل بنا</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-header animate-on-scroll">
+        <div class="container">
+            <h1>اتصل بنا</h1>
+            <p>تواصل معنا الآن واحصل على استشارة مجانية لتصميم منزلك، فريقنا المتخصص في خدمتك.</p>
+        </div>
+    </section>
+
+    <section class="contact-page">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info-section animate-on-scroll">
+                    <h2>معلومات الاتصال</h2>
+                    <p>نحن هنا لمساعدتك في تحويل منزلك إلى تحفة فنية. تواصل معنا بأي طريقة تفضلها وسنكون سعداء بخدمتك.</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="method-content">
+                                <h3>اتصل بنا</h3>
+                                <p>+966 50 123 4567</p>
+                                <p>+966 11 234 5678</p>
+                                <span class="method-note">متاح من الأحد إلى الخميس</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="method-content">
+                                <h3>واتساب</h3>
+                                <p>+966 50 123 4567</p>
+                                <span class="method-note">رد فوري على الرسائل</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-content">
+                                <h3>البريد الإلكتروني</h3>
+                                <p>info@lamsat-dekor.com</p>
+                                <p>sales@lamsat-dekor.com</p>
+                                <span class="method-note">رد خلال 24 ساعة</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="method-content">
+                                <h3>موقعنا</h3>
+                                <p>شارع الملك فهد</p>
+                                <p>الرياض، المملكة العربية السعودية</p>
+                                <span class="method-note">زيارة المعرض متاحة</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="working-hours animate-on-scroll">
+                        <h3>ساعات العمل</h3>
+                        <div class="hours-grid">
+                            <div class="day">
+                                <span class="day-name">الأحد - الخميس</span>
+                                <span class="day-time">9:00 ص - 9:00 م</span>
+                            </div>
+                            <div class="day">
+                                <span class="day-name">الجمعة</span>
+                                <span class="day-time">10:00 ص - 8:00 م</span>
+                            </div>
+                            <div class="day">
+                                <span class="day-name">السبت</span>
+                                <span class="day-time">10:00 ص - 8:00 م</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links-contact animate-on-scroll">
+                        <h3>تابعنا على وسائل التواصل</h3>
+                        <div class="social-grid">
+                            <a href="#" class="social-link" aria-label="Facebook">
+                                <i class="fab fa-facebook"></i>
+                                <span>فيسبوك</span>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                                <span>إنستغرام</span>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                                <span>تويتر</span>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Youtube">
+                                <i class="fab fa-youtube"></i>
+                                <span>يوتيوب</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-section animate-on-scroll">
+                    <h2>أرسل لنا رسالة</h2>
+                    <p>املأ النموذج أدناه وسنقوم بالرد عليك في أقرب وقت ممكن لتقديم المساعدة المطلوبة.</p>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">الاسم الأول *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">الاسم الأخير *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">رقم الهاتف *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">البريد الإلكتروني *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">الخدمة المطلوبة *</label>
+                            <select id="service" name="service" required>
+                                <option value="">اختر الخدمة المطلوبة</option>
+                                <option value="curtains">الستائر والبرادي</option>
+                                <option value="furniture">الكنب والتفصيل</option>
+                                <option value="decoration">الديكورات الحديثة</option>
+                                <option value="tiles">البلاط والسيراميك</option>
+                                <option value="consultation">استشارة مجانية</option>
+                                <option value="other">خدمات أخرى</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="budget">الميزانية المتوقعة</label>
+                            <select id="budget" name="budget">
+                                <option value="">اختر الميزانية</option>
+                                <option value="low">أقل من 10,000 ريال</option>
+                                <option value="medium">10,000 - 30,000 ريال</option>
+                                <option value="high">30,000 - 50,000 ريال</option>
+                                <option value="premium">أكثر من 50,000 ريال</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="timeline">الموعد المطلوب</label>
+                            <select id="timeline" name="timeline">
+                                <option value="">اختر الموعد</option>
+                                <option value="urgent">عاجل (خلال أسبوع)</option>
+                                <option value="soon">قريب (خلال شهر)</option>
+                                <option value="flexible">مرن (خلال 3 أشهر)</option>
+                                <option value="planning">تخطيط مستقبلي</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">تفاصيل المشروع *</label>
+                            <textarea id="message" name="message" rows="6" placeholder="اشرح لنا مشروعك بالتفصيل..." required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="newsletter" id="newsletter">
+                                <span class="checkmark"></span>
+                                أريد تلقي النشرة الإخبارية والعروض الخاصة
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="agreement" id="agreement" required>
+                                <span class="checkmark"></span>
+                                أوافق على <a href="#" class="link">سياسة الخصوصية</a> و <a href="#" class="link">الشروط والأحكام</a> *
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            إرسال الرسالة
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section animate-on-scroll">
+        <div class="container">
+            <h2>موقعنا</h2>
+            <p>يمكنك زيارتنا في معرضنا أو التواصل معنا للحصول على خدمة ميدانية واستشارة متخصصة.</p>
+            
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>شارع الملك فهد، الرياض</h3>
+                    <p>المملكة العربية السعودية</p>
+                    <a href="https://maps.google.com" target="_blank" class="btn btn-outline">
+                        <i class="fas fa-directions"></i>
+                        احصل على الاتجاهات
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <h2>الأسئلة الشائعة</h2>
+            <p>إجابات على أكثر الأسئلة شيوعاً حول خدماتنا وأعمالنا، لمساعدتك في اتخاذ قرار مستنير.</p>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>كم تستغرق مدة تنفيذ المشروع؟</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>تختلف مدة التنفيذ حسب حجم المشروع وتعقيده. المشاريع الصغيرة تستغرق عادة من 1-2 أسبوع، بينما المشاريع الكبيرة قد تستغرق من 1-3 أشهر، مع الحرص على الالتزام بالجودة والمواعيد المتفق عليها.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>هل تقدمون خدمة ميدانية؟</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نعم، نقدم خدمة ميدانية لزيارة منزلك وتقديم استشارة مجانية مع قياس دقيق للمساحات وتصميم مخصص يلبي احتياجاتك ورغباتك بدقة.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>ما هي طرق الدفع المتاحة؟</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نقبل جميع طرق الدفع لتوفير المرونة لعملائنا: النقد، البطاقات الائتمانية، التحويل البنكي، والدفع على أقساط حسب طبيعة وحجم المشروع.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>هل تقدمون ضمان على الأعمال؟</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نعم، نقدم ضمان شامل على جميع أعمالنا، تتراوح مدته بين 1-3 سنوات حسب نوع العمل والمواد المستخدمة، لضمان رضاك التام وراحة بالك.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>لمسات للديكور</h3>
+                    <p>نحول منزلك إلى تحفة فنية مع أفضل خدمات الديكور والداخلية</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://wa.me/966501234567" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>خدماتنا</h3>
+                    <ul>
+                        <li><a href="services.html#curtains">الستائر والبرادي</a></li>
+                        <li><a href="services.html#furniture">الكنب والتفصيل</a></li>
+                        <li><a href="services.html#decoration">الديكورات الحديثة</a></li>
+                        <li><a href="services.html#tiles">البلاط والسيراميك</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="services.html">خدماتنا</a></li>
+                        <li><a href="gallery.html">معرض الأعمال</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>معلومات الاتصال</h3>
+                    <p><i class="fas fa-phone"></i> +966 50 123 4567</p>
+                    <p><i class="fas fa-envelope"></i> info@lamsat-dekor.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> شارع الملك فهد، الرياض</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 لمسات للديكور. جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init(); // Initialize AOS library
+    </script>
+</body>
+</html>
