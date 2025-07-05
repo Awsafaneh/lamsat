@@ -3,28 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>معرض الأعمال - لمسات للديكور</title>
+    <title>معرض الأعمال - لمسات للستائر</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Dyslexic&display=swap" rel="stylesheet">
+    <!-- AOS Library CSS for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Accessibility Toolbar - Only Dark Mode Toggle -->
     <div class="accessibility-toolbar">
         <button onclick="toggleDarkMode()" title="وضع الليل/النهار"><i class="fas fa-moon"></i></button>
-        <button onclick="changeTextSize('small')" title="حجم الخط صغير">A-</button>
-        <button onclick="changeTextSize('normal')" title="حجم الخط عادي">A</button>
-        <button onclick="changeTextSize('large')" title="حجم الخط كبير">A+</button>
-        <button onclick="toggleHighContrast()" title="وضع التباين العالي"><i class="fas fa-adjust"></i></button>
-        <button onclick="toggleDyslexicFont()" title="خط عسر القراءة"><i class="fas fa-font"></i></button>
     </div>
 
+    <!-- Header -->
     <header class="header">
         <nav class="navbar">
             <div class="nav-container">
                 <div class="logo">
-                    <h2>لمسات للديكور</h2>
-                    <span>Lamsat Al Dekor</span>
+                    <img src="logo.png" alt="لمسات للستائر Logo" onerror="this.onerror=null;this.src='https://placehold.co/60x60/A38A5A/ffffff?text=Logo';">
+                    <div class="logo-text">
+                        <h2>لمسات للستائر</h2>
+                        <span>Lamasat Al Satayer</span>
+                    </div>
                 </div>
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link">الرئيسية</a></li>
@@ -41,29 +42,32 @@
         </nav>
     </header>
 
-    <section class="page-header animate-on-scroll">
+    <!-- Page Header -->
+    <section class="page-header" data-aos="fade-in">
         <div class="container">
             <h1>معرض أعمالنا</h1>
-            <p>شاهد بعض من مشاريعنا المنجزة وأعمالنا المميزة التي تعكس خبرتنا وإبداعنا.</p>
+            <p>شاهد بعض من مشاريعنا المنجزة وأعمالنا المميزة في الستائر والكنب والتنجيد والتفصيل.</p>
         </div>
     </section>
 
+    <!-- Gallery Filter -->
     <section class="gallery-filter">
         <div class="container">
             <div class="filter-buttons">
                 <button class="filter-btn active" data-filter="all">جميع الأعمال</button>
                 <button class="filter-btn" data-filter="curtains">الستائر والبرادي</button>
-                <button class="filter-btn" data-filter="furniture">الكنب والتفصيل</button>
-                <button class="filter-btn" data-filter="decoration">الديكورات الحديثة</button>
-                <button class="filter-btn" data-filter="tiles">البلاط والسيراميك</button>
+                <button class="filter-btn" data-filter="furniture">الكنب والتنجيد</button>
+                <button class="filter-btn" data-filter="tailoring">تفصيل الأقمشة</button>
             </div>
         </div>
     </section>
 
+    <!-- Gallery Grid -->
     <section class="gallery-showcase">
         <div class="container">
             <div class="gallery-grid">
-                <div class="gallery-item animate-on-scroll" data-category="curtains">
+                <!-- Curtains & Blinds -->
+                <div class="gallery-item" data-category="curtains" data-aos="zoom-in" data-aos-delay="100">
                     <div class="gallery-image">
                         <div class="image-placeholder">
                             <i class="fas fa-blinds"></i>
@@ -82,7 +86,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item animate-on-scroll" data-category="curtains">
+                <div class="gallery-item" data-category="curtains" data-aos="zoom-in" data-aos-delay="200">
                     <div class="gallery-image">
                         <div class="image-placeholder">
                             <i class="fas fa-blinds"></i>
@@ -101,7 +105,8 @@
                     </div>
                 </div>
 
-                <div class="gallery-item animate-on-scroll" data-category="furniture">
+                <!-- Furniture & Upholstery -->
+                <div class="gallery-item" data-category="furniture" data-aos="zoom-in" data-aos-delay="300">
                     <div class="gallery-image">
                         <div class="image-placeholder">
                             <i class="fas fa-couch"></i>
@@ -120,7 +125,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item animate-on-scroll" data-category="furniture">
+                <div class="gallery-item" data-category="furniture" data-aos="zoom-in" data-aos-delay="400">
                     <div class="gallery-image">
                         <div class="image-placeholder">
                             <i class="fas fa-couch"></i>
@@ -139,83 +144,85 @@
                     </div>
                 </div>
 
-                <div class="gallery-item animate-on-scroll" data-category="decoration">
+                <!-- Tailoring & Fabric Services -->
+                <div class="gallery-item" data-category="tailoring" data-aos="zoom-in" data-aos-delay="500">
                     <div class="gallery-image">
                         <div class="image-placeholder">
-                            <i class="fas fa-paint-brush"></i>
+                            <i class="fas fa-cut"></i>
                         </div>
                     </div>
                     <div class="gallery-overlay">
                         <div class="gallery-content">
-                            <h3>ديكورات جبسية - قصر الرياض</h3>
-                            <p>ديكورات جبسية فريدة للأسقف والجدران، تضفي فخامة وتميزًا للمساحات.</p>
+                            <h3>تفصيل ستائر - غرفة معيشة</h3>
+                            <p>تفصيل ستائر بتصميم فريد يناسب غرفة المعيشة.</p>
                             <div class="gallery-tags">
-                                <span class="tag">ديكورات جبسية</span>
-                                <span class="tag">أسقف</span>
-                                <span class="tag">الرياض</span>
+                                <span class="tag">تفصيل ستائر</span>
+                                <span class="tag">غرفة معيشة</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="gallery-item animate-on-scroll" data-category="decoration">
+                <div class="gallery-item" data-category="tailoring" data-aos="zoom-in" data-aos-delay="600">
                     <div class="gallery-image">
                         <div class="image-placeholder">
-                            <i class="fas fa-lightbulb"></i>
+                            <i class="fas fa-cut"></i>
                         </div>
                     </div>
                     <div class="gallery-overlay">
                         <div class="gallery-content">
-                            <h3>إضاءة ديكورية - فيلا جدة</h3>
-                            <p>أنظمة إضاءة ذكية ومتطورة، تخلق أجواءً ساحرة وتبرز جمال الديكور الداخلي.</p>
+                            <h3>خياطة أغطية كنب - شقة عمان</h3>
+                            <p>خياطة أغطية كنب جديدة بأقمشة عالية الجودة.</p>
                             <div class="gallery-tags">
-                                <span class="tag">إضاءة ديكورية</span>
-                                <span class="tag">أنظمة ذكية</span>
+                                <span class="tag">خياطة أغطية</span>
+                                <span class="tag">كنب</span>
+                                <span class="tag">عمان</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upholstery & Furniture Renewal -->
+                <div class="gallery-item" data-category="furniture" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="gallery-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-chair"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h3>تنجيد كراسي - فيلا جدة</h3>
+                            <p>تجديد وتنجيد كراسي الطعام بأقمشة فاخرة.</p>
+                            <div class="gallery-tags">
+                                <span class="tag">تنجيد</span>
+                                <span class="tag">كراسي</span>
                                 <span class="tag">جدة</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="gallery-item animate-on-scroll" data-category="tiles">
+                <div class="gallery-item" data-category="furniture" data-aos="zoom-in" data-aos-delay="200">
                     <div class="gallery-image">
                         <div class="image-placeholder">
-                            <i class="fas fa-th-large"></i>
+                            <i class="fas fa-chair"></i>
                         </div>
                     </div>
                     <div class="gallery-overlay">
                         <div class="gallery-content">
-                            <h3>بلاط إيطالي - مطبخ الرياض</h3>
-                            <p>بلاط إيطالي عالي الجودة للمطبخ، يجمع بين المتانة والتصميم الفني.</p>
+                            <h3>تجديد صالون - الرياض</h3>
+                            <p>تجديد شامل لصالون قديم بأقمشة حديثة.</p>
                             <div class="gallery-tags">
-                                <span class="tag">بلاط إيطالي</span>
-                                <span class="tag">مطبخ</span>
+                                <span class="tag">تجديد أثاث</span>
+                                <span class="tag">صالون</span>
                                 <span class="tag">الرياض</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="gallery-item animate-on-scroll" data-category="tiles">
-                    <div class="gallery-image">
-                        <div class="image-placeholder">
-                            <i class="fas fa-th-large"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-overlay">
-                        <div class="gallery-content">
-                            <h3>سيراميك حمام - فيلا الدمام</h3>
-                            <p>سيراميك أنيق للحمام مع فسيفساء، لتحويل الحمام إلى واحة هادئة.</p>
-                            <div class="gallery-tags">
-                                <span class="tag">سيراميك</span>
-                                <span class="tag">فسيفساء</span>
-                                <span class="tag">الدمام</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item animate-on-scroll" data-category="decoration">
+                <!-- Mixed Projects -->
+                <div class="gallery-item" data-category="curtains" data-aos="zoom-in" data-aos-delay="300">
                     <div class="gallery-image">
                         <div class="image-placeholder">
                             <i class="fas fa-home"></i>
@@ -223,18 +230,18 @@
                     </div>
                     <div class="gallery-overlay">
                         <div class="gallery-content">
-                            <h3>تصميم شامل - فيلا الخبر</h3>
-                            <p>تصميم وتنفيذ شامل للمنزل مع جميع الخدمات، لتحقيق منزل الأحلام.</p>
+                            <h3>مشروع متكامل - فيلا الخبر</h3>
+                            <p>تصميم وتنفيذ ستائر وكنب مخصص لفيلا كاملة.</p>
                             <div class="gallery-tags">
-                                <span class="tag">تصميم شامل</span>
-                                <span class="tag">فيلا</span>
+                                <span class="tag">ستائر</span>
+                                <span class="tag">كنب</span>
                                 <span class="tag">الخبر</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="gallery-item animate-on-scroll" data-category="furniture">
+                <div class="gallery-item" data-category="furniture" data-aos="zoom-in" data-aos-delay="400">
                     <div class="gallery-image">
                         <div class="image-placeholder">
                             <i class="fas fa-bed"></i>
@@ -243,17 +250,17 @@
                     <div class="gallery-overlay">
                         <div class="gallery-content">
                             <h3>غرفة نوم - شقة الرياض</h3>
-                            <p>تصميم كامل لغرفة النوم مع الأثاث والستائر، لراحة واسترخاء مثاليين.</p>
+                            <p>تصميم كامل لغرفة النوم مع الستائر والأثاث المنجد.</p>
                             <div class="gallery-tags">
                                 <span class="tag">غرفة نوم</span>
-                                <span class="tag">أثاث</span>
+                                <span class="tag">أثاث منجد</span>
                                 <span class="tag">الرياض</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="gallery-item animate-on-scroll" data-category="curtains">
+                <div class="gallery-item" data-category="curtains" data-aos="zoom-in" data-aos-delay="500">
                     <div class="gallery-image">
                         <div class="image-placeholder">
                             <i class="fas fa-blinds"></i>
@@ -272,20 +279,19 @@
                     </div>
                 </div>
 
-                <div class="gallery-item animate-on-scroll" data-category="tiles">
+                <div class="gallery-item" data-category="tailoring" data-aos="zoom-in" data-aos-delay="600">
                     <div class="gallery-image">
                         <div class="image-placeholder">
-                            <i class="fas fa-th-large"></i>
+                            <i class="fas fa-cut"></i>
                         </div>
                     </div>
                     <div class="gallery-overlay">
                         <div class="gallery-content">
-                            <h3>فسيفساء - حمام فاخر</h3>
-                            <p>تصاميم فسيفساء فريدة ومميزة للحمام، تضفي لمسة فنية راقية.</p>
+                            <h3>تفصيل مفروشات - مشروع فندقي</h3>
+                            <p>تفصيل مفروشات وأغطية أسرة لمشروع فندقي كبير.</p>
                             <div class="gallery-tags">
-                                <span class="tag">فسيفساء</span>
-                                <span class="tag">حمام</span>
-                                <span class="tag">فاخر</span>
+                                <span class="tag">تفصيل مفروشات</span>
+                                <span class="tag">فندق</span>
                             </div>
                         </div>
                     </div>
@@ -294,27 +300,20 @@
         </div>
     </section>
 
+    <!-- Project Statistics -->
     <section class="project-stats">
         <div class="container">
-            <div class="stats-grid animate-on-scroll">
+            <div class="stats-grid" data-aos="fade-up">
                 <div class="stat-item">
                     <div class="stat-icon">
-                        <i class="fas fa-home"></i>
+                        <i class="fas fa-blinds"></i> <!-- أيقونة مناسبة للستائر -->
                     </div>
                     <div class="stat-content">
-                        <h3>+500</h3>
-                        <p>مشروع منجز</p>
+                        <h3>+5340</h3>
+                        <p>مشروع ستائر وكنب منجز</p>
                     </div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-icon">
-                        <i class="fas fa-smile"></i>
-                    </div>
-                    <div class="stat-content">
-                        <h3>+200</h3>
-                        <p>عميل سعيد</p>
-                    </div>
-                </div>
+                <!-- Removed 'عميل سعيد' -->
                 <div class="stat-item">
                     <div class="stat-icon">
                         <i class="fas fa-award"></i>
@@ -337,39 +336,40 @@
         </div>
     </section>
 
-    <section class="cta-section animate-on-scroll">
+    <!-- CTA Section -->
+    <section class="cta-section" data-aos="fade-up">
         <div class="container">
             <div class="cta-content">
                 <h2>أعجبك عملنا؟</h2>
                 <p>تواصل معنا الآن واحصل على تصميم مخصص لمنزلك، ودعنا نحول رؤيتك إلى واقع.</p>
                 <div class="cta-buttons">
-                    <a href="contact.html" class="btn btn-primary">احجز استشارة مجانية <i class="fas fa-calendar-check"></i></a>
-                    <a href="tel:+966501234567" class="btn btn-secondary">اتصل الآن <i class="fas fa-phone-alt"></i></a>
+                    <a href="contact.html" class="btn btn-primary">تواصل معنا <i class="fas fa-phone-alt"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>لمسات للديكور</h3>
-                    <p>نحول منزلك إلى تحفة فنية مع أفضل خدمات الديكور والداخلية</p>
+                    <h3>لمسات للستائر</h3>
+                    <p>نحول منزلك إلى تحفة فنية مع أفضل خدمات الستائر والكنب والتنجيد والتفصيل.</p>
                     <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://wa.me/966501234567" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/share/1GKXR5TVfR/?mibextid=wwXIfr" target="_blank" aria-label="فيسبوك"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/lamasat_beautiful?igsh=MWJ5aTFtYWx4eXE3cA==" target="_blank" aria-label="إنستغرام"><i class="fab fa-instagram"></i></a>
+                        <!-- Removed Twitter and Youtube -->
+                        <a href="https://wa.me/962786800071" target="_blank" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 <div class="footer-section">
                     <h3>خدماتنا</h3>
                     <ul>
                         <li><a href="services.html#curtains">الستائر والبرادي</a></li>
-                        <li><a href="services.html#furniture">الكنب والتفصيل</a></li>
-                        <li><a href="services.html#decoration">الديكورات الحديثة</a></li>
-                        <li><a href="services.html#tiles">البلاط والسيراميك</a></li>
+                        <li><a href="services.html#furniture">الكنب والتنجيد والتفصيل</a></li>
+                        <li><a href="services.html#tailoring">تفصيل وخياطة الأقمشة</a></li>
+                        <li><a href="services.html#upholstery">تنجيد وتجديد الأثاث</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -383,22 +383,31 @@
                 </div>
                 <div class="footer-section">
                     <h3>معلومات الاتصال</h3>
-                    <p><i class="fas fa-phone"></i> +966 50 123 4567</p>
-                    <p><i class="fas fa-envelope"></i> info@lamsat-dekor.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> شارع الملك فهد، الرياض</p>
+                    <p><i class="fas fa-phone"></i> +962 786800071</p>
+                    <p><i class="fas fa-map-marker-alt"></i> عمان، الأردن</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 لمسات للديكور. جميع الحقوق محفوظة</p>
+                <p>&copy; 2024 لمسات للستائر. جميع الحقوق محفوظة</p>
             </div>
         </div>
     </footer>
 
+    <!-- Back to top button -->
+    <button class="back-to-top" aria-label="العودة لأعلى الصفحة"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- WhatsApp floating button -->
+    <a href="https://wa.me/962786800071?text=مرحباً، أريد استشارة حول خدمات الستائر والكنب" target="_blank" class="whatsapp-btn" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
+
     <script src="main.js"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- AOS Library for scroll animations -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init(); // Initialize AOS library
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        }); // Initialize AOS library
     </script>
 </body>
 </html>

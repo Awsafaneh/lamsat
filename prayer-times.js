@@ -1,4 +1,8 @@
 // Prayer times functionality
+// ملاحظة: هذا الملف لم يتم تعديله بناءً على طلبك،
+// لأنه لا يتعلق بشكل مباشر بتخصص المحل الجديد أو معلومات الاتصال.
+// إذا كنت لا تحتاج إلى وظيفة أوقات الصلاة، يمكنك إزالة استدعاء هذا السكريبت من ملفات HTML.
+
 document.addEventListener('DOMContentLoaded', () => {
     // Get user's location
     if (navigator.geolocation) {
@@ -37,11 +41,18 @@ async function fetchPrayerTimes(latitude, longitude) {
 }
 
 function updatePrayerTimes(timings) {
-    document.getElementById('fajrTime').textContent = timings.Fajr;
-    document.getElementById('dhuhrTime').textContent = timings.Dhuhr;
-    document.getElementById('asrTime').textContent = timings.Asr;
-    document.getElementById('maghribTime').textContent = timings.Maghrib;
-    document.getElementById('ishaTime').textContent = timings.Isha;
+    // Check if elements exist before updating to prevent errors
+    const fajrTime = document.getElementById('fajrTime');
+    const dhuhrTime = document.getElementById('dhuhrTime');
+    const asrTime = document.getElementById('asrTime');
+    const maghribTime = document.getElementById('maghribTime');
+    const ishaTime = document.getElementById('ishaTime');
+
+    if (fajrTime) fajrTime.textContent = timings.Fajr;
+    if (dhuhrTime) dhuhrTime.textContent = timings.Dhuhr;
+    if (asrTime) asrTime.textContent = timings.Asr;
+    if (maghribTime) maghribTime.textContent = timings.Maghrib;
+    if (ishaTime) ishaTime.textContent = timings.Isha;
 }
 
 function updateNextPrayer(timings) {
@@ -72,12 +83,18 @@ function updateNextPrayer(timings) {
         nextPrayer = prayers[0];
     }
 
-    document.getElementById('nextPrayerName').textContent = nextPrayer.name;
-    document.getElementById('nextPrayerTime').textContent = nextPrayer.time;
+    const nextPrayerNameElem = document.getElementById('nextPrayerName');
+    const nextPrayerTimeElem = document.getElementById('nextPrayerTime');
+    const timeRemainingElem = document.getElementById('timeRemaining');
+
+    if (nextPrayerNameElem) nextPrayerNameElem.textContent = nextPrayer.name;
+    if (nextPrayerTimeElem) nextPrayerTimeElem.textContent = nextPrayer.time;
 
     // Update time remaining every minute
-    updateTimeRemaining(nextPrayer.time);
-    setInterval(() => updateTimeRemaining(nextPrayer.time), 60000);
+    if (timeRemainingElem) {
+        updateTimeRemaining(nextPrayer.time);
+        setInterval(() => updateTimeRemaining(nextPrayer.time), 60000);
+    }
 }
 
 function updateTimeRemaining(prayerTime) {
@@ -95,6 +112,9 @@ function updateTimeRemaining(prayerTime) {
     const hoursRemaining = Math.floor(timeDiff / (1000 * 60 * 60));
     const minutesRemaining = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
 
-    document.getElementById('timeRemaining').textContent = 
-        `${hoursRemaining} hours and ${minutesRemaining} minutes remaining`;
-} 
+    const timeRemainingElem = document.getElementById('timeRemaining');
+    if (timeRemainingElem) {
+        timeRemainingElem.textContent = 
+            `${hoursRemaining} hours and ${minutesRemaining} minutes remaining`;
+    }
+}

@@ -3,28 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>خدماتنا - لمسات للديكور</title>
+    <title>خدماتنا - لمسات للستائر</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Dyslexic&display=swap" rel="stylesheet">
+    <!-- AOS Library CSS for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Accessibility Toolbar - Only Dark Mode Toggle -->
     <div class="accessibility-toolbar">
         <button onclick="toggleDarkMode()" title="وضع الليل/النهار"><i class="fas fa-moon"></i></button>
-        <button onclick="changeTextSize('small')" title="حجم الخط صغير">A-</button>
-        <button onclick="changeTextSize('normal')" title="حجم الخط عادي">A</button>
-        <button onclick="changeTextSize('large')" title="حجم الخط كبير">A+</button>
-        <button onclick="toggleHighContrast()" title="وضع التباين العالي"><i class="fas fa-adjust"></i></button>
-        <button onclick="toggleDyslexicFont()" title="خط عسر القراءة"><i class="fas fa-font"></i></button>
     </div>
 
+    <!-- Header -->
     <header class="header">
         <nav class="navbar">
             <div class="nav-container">
                 <div class="logo">
-                    <h2>لمسات للديكور</h2>
-                    <span>Lamsat Al Dekor</span>
+                    <img src="logo.png" alt="لمسات للستائر Logo" onerror="this.onerror=null;this.src='https://placehold.co/60x60/A38A5A/ffffff?text=Logo';">
+                    <div class="logo-text">
+                        <h2>لمسات للستائر</h2>
+                        <span>Lamasat Al Satayer</span>
+                    </div>
                 </div>
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link">الرئيسية</a></li>
@@ -41,16 +42,19 @@
         </nav>
     </header>
 
-    <section class="page-header animate-on-scroll">
+    <!-- Page Header -->
+    <section class="page-header" data-aos="fade-in">
         <div class="container">
             <h1>خدماتنا المميزة</h1>
-            <p>نقدم مجموعة شاملة من خدمات الديكور والداخلية بأعلى جودة وإتقان، لتلبية طموحاتك.</p>
+            <p>نقدم مجموعة شاملة من خدمات الستائر والكنب والتنجيد والتفصيل بأعلى جودة وإتقان.</p>
         </div>
     </section>
 
+    <!-- Detailed Services -->
     <section class="detailed-services">
         <div class="container">
-            <div class="service-section animate-on-scroll">
+            <!-- Curtains & Blinds -->
+            <div class="service-section" data-aos="fade-up">
                 <div class="service-header">
                     <div class="service-icon">
                         <i class="fas fa-blinds"></i>
@@ -64,28 +68,28 @@
                     <div class="service-features">
                         <h3>أنواع الستائر والبرادي:</h3>
                         <div class="features-grid">
-                            <div class="feature-item">
+                            <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
                                 <i class="fas fa-check-circle"></i>
                                 <div>
                                     <h4>الستائر الرومانية</h4>
                                     <p>ستائر أنيقة وعملية تتناسب مع جميع أنواع الغرف والمساحات.</p>
                                 </div>
                             </div>
-                            <div class="feature-item">
+                            <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
                                 <i class="fas fa-check-circle"></i>
                                 <div>
                                     <h4>البرادي الكهربائية</h4>
                                     <p>برادي ذكية تعمل بالتحكم عن بعد، لتوفير أقصى درجات الراحة والتطور.</p>
                                 </div>
                             </div>
-                            <div class="feature-item">
+                            <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
                                 <i class="fas fa-check-circle"></i>
                                 <div>
                                     <h4>ستائر الشيفون</h4>
                                     <p>ستائر خفيفة وأنيقة تضفي لمسة من الرقي والجمال على المنازل العصرية.</p>
                                 </div>
                             </div>
-                            <div class="feature-item">
+                            <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
                                 <i class="fas fa-check-circle"></i>
                                 <div>
                                     <h4>ستائر البلاك آوت</h4>
@@ -97,17 +101,17 @@
                     <div class="service-process">
                         <h3>خطوات العمل:</h3>
                         <div class="process-steps">
-                            <div class="step">
+                            <div class="step" data-aos="fade-up" data-aos-delay="100">
                                 <div class="step-number">1</div>
                                 <h4>الاستشارة والتصميم</h4>
                                 <p>نقوم بزيارة منزلك لتقديم استشارة مجانية وتصميم الستائر المناسبة لك.</p>
                             </div>
-                            <div class="step">
+                            <div class="step" data-aos="fade-up" data-aos-delay="200">
                                 <div class="step-number">2</div>
                                 <h4>اختيار الأقمشة</h4>
                                 <p>مساعدتك في اختيار أجود أنواع الأقمشة والتصاميم التي تتناسب مع ديكورك.</p>
                             </div>
-                            <div class="step">
+                            <div class="step" data-aos="fade-up" data-aos-delay="300">
                                 <div class="step-number">3</div>
                                 <h4>التفصيل والتركيب</h4>
                                 <p>تفصيل وتركيب الستائر باحترافية عالية ودقة متناهية، لضمان الكمال.</p>
@@ -117,13 +121,14 @@
                 </div>
             </div>
 
-            <div class="service-section animate-on-scroll">
+            <!-- Furniture & Upholstery -->
+            <div class="service-section" data-aos="fade-up">
                 <div class="service-header">
                     <div class="service-icon">
                         <i class="fas fa-couch"></i>
                     </div>
                     <div class="service-title">
-                        <h2>الكنب والتفصيل</h2>
+                        <h2>الكنب والتنجيد والتفصيل</h2>
                         <p>تصميم وتفصيل الكنب والأثاث المنزلي حسب الطلب، بجودة لا مثيل لها وتصاميم فاخرة.</p>
                     </div>
                 </div>
@@ -131,28 +136,28 @@
                     <div class="service-features">
                         <h3>أنواع الكنب والتفصيل:</h3>
                         <div class="features-grid">
-                            <div class="feature-item">
+                            <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
                                 <i class="fas fa-check-circle"></i>
                                 <div>
                                     <h4>كنب مودرن</h4>
                                     <p>تصاميم عصرية تناسب المنازل الحديثة وتوفر الراحة والأناقة.</p>
                                 </div>
                             </div>
-                            <div class="feature-item">
+                            <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
                                 <i class="fas fa-check-circle"></i>
                                 <div>
                                     <h4>كنب كلاسيك</h4>
                                     <p>تصاميم تقليدية أنيقة وفخمة، تضفي لمسة من التراث الأصيل على منزلك.</p>
                                 </div>
                             </div>
-                            <div class="feature-item">
+                            <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
                                 <i class="fas fa-check-circle"></i>
                                 <div>
                                     <h4>تفصيل حسب المقاس</h4>
                                     <p>خدمة تفصيل مخصصة لضمان أن الأثاث يناسب تمامًا مساحة منزلك.</p>
                                 </div>
                             </div>
-                            <div class="feature-item">
+                            <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
                                 <i class="fas fa-check-circle"></i>
                                 <div>
                                     <h4>أقمشة فاخرة</h4>
@@ -164,17 +169,17 @@
                     <div class="service-process">
                         <h3>خطوات العمل:</h3>
                         <div class="process-steps">
-                            <div class="step">
+                            <div class="step" data-aos="fade-up" data-aos-delay="100">
                                 <div class="step-number">1</div>
                                 <h4>قياس المساحة</h4>
                                 <p>قياس دقيق لمساحة الغرفة والأثاث المطلوب لضمان التناسب المثالي.</p>
                             </div>
-                            <div class="step">
+                            <div class="step" data-aos="fade-up" data-aos-delay="200">
                                 <div class="step-number">2</div>
                                 <h4>اختيار التصميم</h4>
                                 <p>مساعدتك في اختيار التصميم والألوان المناسبة التي تعكس شخصيتك.</p>
                             </div>
-                            <div class="step">
+                            <div class="step" data-aos="fade-up" data-aos-delay="300">
                                 <div class="step-number">3</div>
                                 <h4>التفصيل والتركيب</h4>
                                 <p>تفصيل وتركيب الأثاث باحترافية عالية، مع ضمان الجودة والمتانة.</p>
@@ -184,46 +189,47 @@
                 </div>
             </div>
 
-            <div class="service-section animate-on-scroll">
+            <!-- Tailoring & Fabric Services -->
+            <div class="service-section" data-aos="fade-up">
                 <div class="service-header">
                     <div class="service-icon">
-                        <i class="fas fa-paint-brush"></i>
+                        <i class="fas fa-cut"></i>
                     </div>
                     <div class="service-title">
-                        <h2>الديكورات الحديثة</h2>
-                        <p>تصميم وتنفيذ الديكورات الداخلية بأحدث الاتجاهات العالمية واللمسات الفنية المبتكرة.</p>
+                        <h2>تفصيل وخياطة الأقمشة</h2>
+                        <p>خدمات تفصيل وخياطة الأقمشة المتنوعة للستائر والكنب والمفروشات بدقة واحترافية.</p>
                     </div>
                 </div>
                 <div class="service-content">
                     <div class="service-features">
-                        <h3>أنواع الديكورات:</h3>
+                        <h3>خدمات التفصيل:</h3>
                         <div class="features-grid">
-                            <div class="feature-item">
+                            <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <h4>ديكورات جبسية</h4>
-                                    <p>تصاميم جبسية فريدة للأسقف والجدران، تضيف عمقًا وجمالاً للمساحة.</p>
+                                    <h4>تفصيل ستائر حسب الطلب</h4>
+                                    <p>خياطة ستائر بأي تصميم أو حجم يناسب نوافذك.</p>
                                 </div>
                             </div>
-                            <div class="feature-item">
+                            <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <h4>إضاءة ديكورية</h4>
-                                    <p>أنظمة إضاءة ذكية ومتطورة، تخلق أجواءً ساحرة وتبرز جمال الديكور.</p>
+                                    <h4>خياطة أغطية كنب ومفروشات</h4>
+                                    <p>تصميم وخياطة أغطية جديدة للكنب والمفروشات لتجديد مظهرها.</p>
                                 </div>
                             </div>
-                            <div class="feature-item">
+                            <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <h4>ألوان وتنسيق</h4>
-                                    <p>اختيار وتنسيق الألوان المتناسقة، لتحقيق التناغم البصري والراحة النفسية.</p>
+                                    <h4>تصميم وسائد وديكورات قماشية</h4>
+                                    <p>إبداع وسائد وديكورات قماشية فريدة لإضافة لمسة شخصية.</p>
                                 </div>
                             </div>
-                            <div class="feature-item">
+                            <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <h4>إكسسوارات منزلية</h4>
-                                    <p>إكسسوارات ديكورية عصرية وفاخرة، تضفي لمسة شخصية على منزلك.</p>
+                                    <h4>تشكيلة واسعة من الأقمشة</h4>
+                                    <p>نوفر أقمشة عالية الجودة بألوان وأنماط متعددة لتناسب ذوقك.</p>
                                 </div>
                             </div>
                         </div>
@@ -231,66 +237,67 @@
                     <div class="service-process">
                         <h3>خطوات العمل:</h3>
                         <div class="process-steps">
-                            <div class="step">
+                            <div class="step" data-aos="fade-up" data-aos-delay="100">
                                 <div class="step-number">1</div>
-                                <h4>التصميم المبدئي</h4>
-                                <p>تصميم شامل للمشروع مع المخططات ثلاثية الأبعاد لتصور واضح.</p>
+                                <h4>اختيار القماش والتصميم</h4>
+                                <p>مساعدتك في اختيار القماش المناسب والتصميم الذي ترغب به.</p>
                             </div>
-                            <div class="step">
+                            <div class="step" data-aos="fade-up" data-aos-delay="200">
                                 <div class="step-number">2</div>
-                                <h4>اختيار المواد</h4>
-                                <p>اختيار أجود المواد والألوان والخامات لضمان الجودة والمتانة.</p>
+                                <h4>أخذ القياسات بدقة</h4>
+                                <p>أخذ قياسات دقيقة لضمان تفصيل مثالي ومناسب للمساحة.</p>
                             </div>
-                            <div class="step">
+                            <div class="step" data-aos="fade-up" data-aos-delay="300">
                                 <div class="step-number">3</div>
-                                <h4>التنفيذ والتركيب</h4>
-                                <p>تنفيذ الديكورات باحترافية عالية ودقة متناهية، مع إشراف مستمر.</p>
+                                <h4>الخياطة والتسليم</h4>
+                                <p>خياطة احترافية وتسليم المنتج في الوقت المحدد وبجودة عالية.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="service-section animate-on-scroll">
+            <!-- Upholstery & Furniture Renewal -->
+            <div class="service-section" data-aos="fade-up">
                 <div class="service-header">
                     <div class="service-icon">
-                        <i class="fas fa-th-large"></i>
+                        <i class="fas fa-chair"></i>
                     </div>
                     <div class="service-title">
-                        <h2>البلاط والسيراميك</h2>
-                        <p>تركيب وتصميم البلاط والسيراميك بأحدث التصاميم والأنواع العالمية، لجمال يدوم.</p>
+                        <h2>تنجيد وتجديد الأثاث</h2>
+                        <p>تجديد وتنجيد جميع أنواع الأثاث والكنب بأقمشة جديدة وتصاميم عصرية، ليعود كأنه جديد.</p>
                     </div>
                 </div>
                 <div class="service-content">
                     <div class="service-features">
-                        <h3>أنواع البلاط والسيراميك:</h3>
+                        <h3>خدمات التنجيد:</h3>
                         <div class="features-grid">
-                            <div class="feature-item">
+                            <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <h4>بلاط أرضيات</h4>
-                                    <p>بلاط عالي الجودة ومقاوم للتآكل لجميع أنواع الأرضيات، بتصاميم متنوعة.</p>
+                                    <h4>تنجيد كنب وصالونات</h4>
+                                    <p>تنجيد احترافي للكنب والصالونات بأقمشة عالية الجودة.</p>
                                 </div>
                             </div>
-                            <div class="feature-item">
+                            <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <h4>سيراميك جدران</h4>
-                                    <p>سيراميك أنيق للجدران والحمامات، يضفي لمسة من الأناقة والرقي.</p>
+                                    <h4>تجديد مقاعد وكراسي</h4>
+                                    <p>إعادة تنجيد وتجديد جميع أنواع المقاعد والكراسي.</p>
                                 </div>
                             </div>
-                            <div class="feature-item">
+                            <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <h4>فسيفساء</h4>
-                                    <p>تصاميم فسيفساء فريدة ومميزة، تضيف طابعًا فنيًا خاصًا لمساحتك.</p>
+                                    <h4>إصلاح وتغيير حشوات</h4>
+                                    <p>إصلاح الهياكل وتغيير الحشوات الداخلية للأثاث لراحة تدوم.</p>
                                 </div>
                             </div>
-                            <div class="feature-item">
+                            <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <h4>تصاميم مخصصة</h4>
-                                    <p>تصاميم مخصصة حسب طلب العميل، لتحقيق الرؤية الشخصية لكل مشروع.</p>
+                                    <h4>خيارات واسعة من الأقمشة</h4>
+                                    <p>مجموعة كبيرة من الأقمشة الجلدية والقماشية للتنجيد.</p>
                                 </div>
                             </div>
                         </div>
@@ -298,20 +305,20 @@
                     <div class="service-process">
                         <h3>خطوات العمل:</h3>
                         <div class="process-steps">
-                            <div class="step">
+                            <div class="step" data-aos="fade-up" data-aos-delay="100">
                                 <div class="step-number">1</div>
-                                <h4>إزالة البلاط القديم</h4>
-                                <p>إزالة البلاط القديم وتجهيز السطح بدقة واحترافية لعملية التركيب.</p>
+                                <h4>معاينة وتقييم الأثاث</h4>
+                                <p>تقييم حالة الأثاث وتحديد احتياجات التنجيد والتجديد.</p>
                             </div>
-                            <div class="step">
+                            <div class="step" data-aos="fade-up" data-aos-delay="200">
                                 <div class="step-number">2</div>
-                                <h4>تركيب البلاط الجديد</h4>
-                                <p>تركيب البلاط الجديد باحترافية عالية، مع ضمان الاستقامة والتناسق.</p>
+                                <h4>اختيار المواد والتصميم</h4>
+                                <p>مساعدتك في اختيار القماش والحشوات والتصميم الجديد.</p>
                             </div>
-                            <div class="step">
+                            <div class="step" data-aos="fade-up" data-aos-delay="300">
                                 <div class="step-number">3</div>
-                                <h4>التشطيبات النهائية</h4>
-                                <p>إجراء التشطيبات النهائية والتنظيف، لضمان نتيجة مثالية ولامعة.</p>
+                                <h4>التنجيد والتسليم</h4>
+                                <p>تنفيذ أعمال التنجيد بدقة عالية وتسليم الأثاث مجدداً.</p>
                             </div>
                         </div>
                     </div>
@@ -320,39 +327,40 @@
         </div>
     </section>
 
-    <section class="cta-section animate-on-scroll">
+    <!-- CTA Section -->
+    <section class="cta-section" data-aos="fade-up">
         <div class="container">
             <div class="cta-content">
                 <h2>احصل على استشارة مجانية</h2>
                 <p>تواصل معنا الآن واحصل على استشارة مجانية لتصميم منزلك، فريقنا بانتظارك.</p>
                 <div class="cta-buttons">
-                    <a href="contact.html" class="btn btn-primary">احجز استشارة <i class="fas fa-calendar-check"></i></a>
-                    <a href="tel:+966501234567" class="btn btn-secondary">اتصل الآن <i class="fas fa-phone-alt"></i></a>
+                    <a href="contact.html" class="btn btn-primary">تواصل معنا <i class="fas fa-phone-alt"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>لمسات للديكور</h3>
-                    <p>نحول منزلك إلى تحفة فنية مع أفضل خدمات الديكور والداخلية</p>
+                    <h3>لمسات للستائر</h3>
+                    <p>نحول منزلك إلى تحفة فنية مع أفضل خدمات الستائر والكنب والتنجيد والتفصيل.</p>
                     <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://wa.me/966501234567" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/share/1GKXR5TVfR/?mibextid=wwXIfr" target="_blank" aria-label="فيسبوك"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/lamasat_beautiful?igsh=MWJ5aTFtYWx4eXE3cA==" target="_blank" aria-label="إنستغرام"><i class="fab fa-instagram"></i></a>
+                        <!-- Removed Twitter and Youtube -->
+                        <a href="https://wa.me/962786800071" target="_blank" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 <div class="footer-section">
                     <h3>خدماتنا</h3>
                     <ul>
-                        <li><a href="services.html#curtains">الستائر والبرادي</a></li>
-                        <li><a href="services.html#furniture">الكنب والتفصيل</a></li>
-                        <li><a href="services.html#decoration">الديكورات الحديثة</a></li>
-                        <li><a href="services.html#tiles">البلاط والسيراميك</a></li>
+                        <li><a href="#curtains">الستائر والبرادي</a></li>
+                        <li><a href="#furniture">الكنب والتنجيد والتفصيل</a></li>
+                        <li><a href="#tailoring">تفصيل وخياطة الأقمشة</a></li>
+                        <li><a href="#upholstery">تنجيد وتجديد الأثاث</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -366,22 +374,31 @@
                 </div>
                 <div class="footer-section">
                     <h3>معلومات الاتصال</h3>
-                    <p><i class="fas fa-phone"></i> +966 50 123 4567</p>
-                    <p><i class="fas fa-envelope"></i> info@lamsat-dekor.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> شارع الملك فهد، الرياض</p>
+                    <p><i class="fas fa-phone"></i> +962 786800071</p>
+                    <p><i class="fas fa-map-marker-alt"></i> عمان، الأردن</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 لمسات للديكور. جميع الحقوق محفوظة</p>
+                <p>&copy; 2024 لمسات للستائر. جميع الحقوق محفوظة</p>
             </div>
         </div>
     </footer>
 
+    <!-- Back to top button -->
+    <button class="back-to-top" aria-label="العودة لأعلى الصفحة"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- WhatsApp floating button -->
+    <a href="https://wa.me/962786800071?text=مرحباً، أريد استشارة حول خدمات الستائر والكنب" target="_blank" class="whatsapp-btn" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
+
     <script src="main.js"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- AOS Library for scroll animations -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init(); // Initialize AOS library
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        }); // Initialize AOS library
     </script>
 </body>
 </html>

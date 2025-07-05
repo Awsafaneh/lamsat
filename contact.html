@@ -3,28 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>اتصل بنا - لمسات للديكور</title>
+    <title>اتصل بنا - لمسات للستائر</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Dyslexic&display=swap" rel="stylesheet">
+    <!-- AOS Library CSS for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Accessibility Toolbar - Only Dark Mode Toggle -->
     <div class="accessibility-toolbar">
         <button onclick="toggleDarkMode()" title="وضع الليل/النهار"><i class="fas fa-moon"></i></button>
-        <button onclick="changeTextSize('small')" title="حجم الخط صغير">A-</button>
-        <button onclick="changeTextSize('normal')" title="حجم الخط عادي">A</button>
-        <button onclick="changeTextSize('large')" title="حجم الخط كبير">A+</button>
-        <button onclick="toggleHighContrast()" title="وضع التباين العالي"><i class="fas fa-adjust"></i></button>
-        <button onclick="toggleDyslexicFont()" title="خط عسر القراءة"><i class="fas fa-font"></i></button>
     </div>
 
+    <!-- Header -->
     <header class="header">
         <nav class="navbar">
             <div class="nav-container">
                 <div class="logo">
-                    <h2>لمسات للديكور</h2>
-                    <span>Lamsat Al Dekor</span>
+                    <img src="logo.png" alt="لمسات للستائر Logo" onerror="this.onerror=null;this.src='https://placehold.co/60x60/A38A5A/ffffff?text=Logo';">
+                    <div class="logo-text">
+                        <h2>لمسات للستائر</h2>
+                        <span>Lamasat Al Satayer</span>
+                    </div>
                 </div>
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link">الرئيسية</a></li>
@@ -41,19 +42,22 @@
         </nav>
     </header>
 
-    <section class="page-header animate-on-scroll">
+    <!-- Page Header -->
+    <section class="page-header" data-aos="fade-in">
         <div class="container">
             <h1>اتصل بنا</h1>
-            <p>تواصل معنا الآن واحصل على استشارة مجانية لتصميم منزلك، فريقنا المتخصص في خدمتك.</p>
+            <p>تواصل معنا للحصول على استشارة مجانية حول خدمات الستائر والكنب والتنجيد والتفصيل.</p>
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section class="contact-page">
         <div class="container">
             <div class="contact-grid">
-                <div class="contact-info-section animate-on-scroll">
+                <!-- Contact Information -->
+                <div class="contact-info-section" data-aos="fade-right" data-aos-delay="100">
                     <h2>معلومات الاتصال</h2>
-                    <p>نحن هنا لمساعدتك في تحويل منزلك إلى تحفة فنية. تواصل معنا بأي طريقة تفضلها وسنكون سعداء بخدمتك.</p>
+                    <p>نحن هنا لمساعدتك في تحويل منزلك إلى تحفة فنية من الأقمشة والتصاميم. تواصل معنا بأي طريقة تفضلها وسنكون سعداء بخدمتك.</p>
                     
                     <div class="contact-methods">
                         <div class="contact-method">
@@ -62,8 +66,7 @@
                             </div>
                             <div class="method-content">
                                 <h3>اتصل بنا</h3>
-                                <p>+966 50 123 4567</p>
-                                <p>+966 11 234 5678</p>
+                                <p>+962 786800071</p>
                                 <span class="method-note">متاح من الأحد إلى الخميس</span>
                             </div>
                         </div>
@@ -74,20 +77,8 @@
                             </div>
                             <div class="method-content">
                                 <h3>واتساب</h3>
-                                <p>+966 50 123 4567</p>
+                                <p>+962 786800071</p>
                                 <span class="method-note">رد فوري على الرسائل</span>
-                            </div>
-                        </div>
-
-                        <div class="contact-method">
-                            <div class="method-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="method-content">
-                                <h3>البريد الإلكتروني</h3>
-                                <p>info@lamsat-dekor.com</p>
-                                <p>sales@lamsat-dekor.com</p>
-                                <span class="method-note">رد خلال 24 ساعة</span>
                             </div>
                         </div>
 
@@ -97,235 +88,127 @@
                             </div>
                             <div class="method-content">
                                 <h3>موقعنا</h3>
-                                <p>شارع الملك فهد</p>
-                                <p>الرياض، المملكة العربية السعودية</p>
+                                <p>عمان، الأردن</p>
                                 <span class="method-note">زيارة المعرض متاحة</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="working-hours animate-on-scroll">
-                        <h3>ساعات العمل</h3>
-                        <div class="hours-grid">
-                            <div class="day">
-                                <span class="day-name">الأحد - الخميس</span>
-                                <span class="day-time">9:00 ص - 9:00 م</span>
-                            </div>
-                            <div class="day">
-                                <span class="day-name">الجمعة</span>
-                                <span class="day-time">10:00 ص - 8:00 م</span>
-                            </div>
-                            <div class="day">
-                                <span class="day-name">السبت</span>
-                                <span class="day-time">10:00 ص - 8:00 م</span>
-                            </div>
-                        </div>
+                    <!-- Working hours removed -->
+                    <div class="working-hours">
+                        <!-- This div is now hidden via CSS: display: none; -->
+                        <!-- If you want to remove it entirely from HTML, delete this block -->
                     </div>
 
-                    <div class="social-links-contact animate-on-scroll">
+                    <div class="social-links-contact" data-aos="fade-up" data-aos-delay="300">
                         <h3>تابعنا على وسائل التواصل</h3>
                         <div class="social-grid">
-                            <a href="#" class="social-link" aria-label="Facebook">
+                            <a href="https://www.facebook.com/share/1GKXR5TVfR/?mibextid=wwXIfr" target="_blank" class="social-link" aria-label="فيسبوك">
                                 <i class="fab fa-facebook"></i>
                                 <span>فيسبوك</span>
                             </a>
-                            <a href="#" class="social-link" aria-label="Instagram">
+                            <a href="https://www.instagram.com/lamasat_beautiful?igsh=MWJ5aTFtYWx4eXE3cA==" target="_blank" class="social-link" aria-label="إنستغرام">
                                 <i class="fab fa-instagram"></i>
                                 <span>إنستغرام</span>
                             </a>
-                            <a href="#" class="social-link" aria-label="Twitter">
-                                <i class="fab fa-twitter"></i>
-                                <span>تويتر</span>
-                            </a>
-                            <a href="#" class="social-link" aria-label="Youtube">
-                                <i class="fab fa-youtube"></i>
-                                <span>يوتيوب</span>
-                            </a>
+                            <!-- Removed Twitter and Youtube -->
                         </div>
                     </div>
-                </div>
-
-                <div class="contact-form-section animate-on-scroll">
-                    <h2>أرسل لنا رسالة</h2>
-                    <p>املأ النموذج أدناه وسنقوم بالرد عليك في أقرب وقت ممكن لتقديم المساعدة المطلوبة.</p>
-                    
-                    <form class="contact-form" id="contactForm">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="firstName">الاسم الأول *</label>
-                                <input type="text" id="firstName" name="firstName" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="lastName">الاسم الأخير *</label>
-                                <input type="text" id="lastName" name="lastName" required>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="phone">رقم الهاتف *</label>
-                                <input type="tel" id="phone" name="phone" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">البريد الإلكتروني *</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="service">الخدمة المطلوبة *</label>
-                            <select id="service" name="service" required>
-                                <option value="">اختر الخدمة المطلوبة</option>
-                                <option value="curtains">الستائر والبرادي</option>
-                                <option value="furniture">الكنب والتفصيل</option>
-                                <option value="decoration">الديكورات الحديثة</option>
-                                <option value="tiles">البلاط والسيراميك</option>
-                                <option value="consultation">استشارة مجانية</option>
-                                <option value="other">خدمات أخرى</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="budget">الميزانية المتوقعة</label>
-                            <select id="budget" name="budget">
-                                <option value="">اختر الميزانية</option>
-                                <option value="low">أقل من 10,000 ريال</option>
-                                <option value="medium">10,000 - 30,000 ريال</option>
-                                <option value="high">30,000 - 50,000 ريال</option>
-                                <option value="premium">أكثر من 50,000 ريال</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="timeline">الموعد المطلوب</label>
-                            <select id="timeline" name="timeline">
-                                <option value="">اختر الموعد</option>
-                                <option value="urgent">عاجل (خلال أسبوع)</option>
-                                <option value="soon">قريب (خلال شهر)</option>
-                                <option value="flexible">مرن (خلال 3 أشهر)</option>
-                                <option value="planning">تخطيط مستقبلي</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">تفاصيل المشروع *</label>
-                            <textarea id="message" name="message" rows="6" placeholder="اشرح لنا مشروعك بالتفصيل..." required></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="newsletter" id="newsletter">
-                                <span class="checkmark"></span>
-                                أريد تلقي النشرة الإخبارية والعروض الخاصة
-                            </label>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="agreement" id="agreement" required>
-                                <span class="checkmark"></span>
-                                أوافق على <a href="#" class="link">سياسة الخصوصية</a> و <a href="#" class="link">الشروط والأحكام</a> *
-                            </label>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary submit-btn">
-                            <i class="fas fa-paper-plane"></i>
-                            إرسال الرسالة
-                        </button>
-                    </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="map-section animate-on-scroll">
+    <!-- Map Section -->
+    <section class="map-section" data-aos="fade-up">
         <div class="container">
             <h2>موقعنا</h2>
             <p>يمكنك زيارتنا في معرضنا أو التواصل معنا للحصول على خدمة ميدانية واستشارة متخصصة.</p>
             
             <div class="map-container">
-                <div class="map-placeholder">
-                    <i class="fas fa-map-marked-alt"></i>
-                    <h3>شارع الملك فهد، الرياض</h3>
-                    <p>المملكة العربية السعودية</p>
-                    <a href="https://maps.google.com" target="_blank" class="btn btn-outline">
-                        <i class="fas fa-directions"></i>
-                        احصل على الاتجاهات
-                    </a>
-                </div>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13538.167822986326!2d35.89737975!3d31.9539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCMjQnNDEuMCJOIDM1wrAzNSczOC42IkU!5e0!3m2!1sen!2sjo!4v1678888888888!5m2!1sen!2sjo"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <a href="https://maps.app.goo.gl/V3TxRYgJAGUv6Fp99" target="_blank" class="btn btn-outline" style="margin-top: 20px;">
+                    <i class="fas fa-directions"></i>
+                    احصل على الاتجاهات
+                </a>
             </div>
         </div>
     </section>
 
+    <!-- FAQ Section -->
     <section class="faq-section">
         <div class="container">
             <h2>الأسئلة الشائعة</h2>
             <p>إجابات على أكثر الأسئلة شيوعاً حول خدماتنا وأعمالنا، لمساعدتك في اتخاذ قرار مستنير.</p>
             
             <div class="faq-grid">
-                <div class="faq-item">
+                <div class="faq-item" data-aos="fade-up">
                     <div class="faq-question">
-                        <h3>كم تستغرق مدة تنفيذ المشروع؟</h3>
+                        <h3>كم تستغرق مدة تنفيذ مشروع الستائر؟</h3>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>تختلف مدة التنفيذ حسب حجم المشروع وتعقيده. المشاريع الصغيرة تستغرق عادة من 1-2 أسبوع، بينما المشاريع الكبيرة قد تستغرق من 1-3 أشهر، مع الحرص على الالتزام بالجودة والمواعيد المتفق عليها.</p>
+                        <p>تختلف مدة تنفيذ الستائر حسب حجم المشروع وتعقيده. المشاريع الصغيرة تستغرق عادة من 3-7 أيام عمل، بينما المشاريع الكبيرة قد تستغرق من 1-3 أسابيع، مع الحرص على الالتزام بالجودة والمواعيد المتفق عليها.</p>
                     </div>
                 </div>
 
-                <div class="faq-item">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
                     <div class="faq-question">
-                        <h3>هل تقدمون خدمة ميدانية؟</h3>
+                        <h3>هل تقدمون خدمة معاينة وقياس للكنب والستائر؟</h3>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>نعم، نقدم خدمة ميدانية لزيارة منزلك وتقديم استشارة مجانية مع قياس دقيق للمساحات وتصميم مخصص يلبي احتياجاتك ورغباتك بدقة.</p>
+                        <p>نعم، نقدم خدمة معاينة وقياس مجانية في الموقع لجميع خدمات الستائر والكنب والتنجيد، لضمان دقة التفصيل والتنفيذ.</p>
                     </div>
                 </div>
 
-                <div class="faq-item">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
                     <div class="faq-question">
-                        <h3>ما هي طرق الدفع المتاحة؟</h3>
+                        <h3>ما هي أنواع الأقمشة المتوفرة لديكم؟</h3>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>نقبل جميع طرق الدفع لتوفير المرونة لعملائنا: النقد، البطاقات الائتمانية، التحويل البنكي، والدفع على أقساط حسب طبيعة وحجم المشروع.</p>
+                        <p>نوفر تشكيلة واسعة من الأقمشة المحلية والعالمية عالية الجودة، بما في ذلك الشيفون، المخمل، الكتان، الساتان، وأقمشة التنجيد المتينة، بألوان وتصاميم متنوعة.</p>
                     </div>
                 </div>
 
-                <div class="faq-item">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
                     <div class="faq-question">
-                        <h3>هل تقدمون ضمان على الأعمال؟</h3>
+                        <h3>هل تقدمون ضمان على أعمال التنجيد؟</h3>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>نعم، نقدم ضمان شامل على جميع أعمالنا، تتراوح مدته بين 1-3 سنوات حسب نوع العمل والمواد المستخدمة، لضمان رضاك التام وراحة بالك.</p>
+                        <p>نعم، نقدم ضمان شامل على جميع أعمال التنجيد والتفصيل، يغطي جودة الخياطة والمتانة، لضمان رضاك التام وراحة بالك.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>لمسات للديكور</h3>
-                    <p>نحول منزلك إلى تحفة فنية مع أفضل خدمات الديكور والداخلية</p>
+                    <h3>لمسات للستائر</h3>
+                    <p>نحول منزلك إلى تحفة فنية مع أفضل خدمات الستائر والكنب والتنجيد والتفصيل.</p>
                     <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://wa.me/966501234567" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/share/1GKXR5TVfR/?mibextid=wwXIfr" target="_blank" aria-label="فيسبوك"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/lamasat_beautiful?igsh=MWJ5aTFtYWx4eXE3cA==" target="_blank" aria-label="إنستغرام"><i class="fab fa-instagram"></i></a>
+                        <!-- Removed Twitter and Youtube -->
+                        <a href="https://wa.me/962786800071" target="_blank" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 <div class="footer-section">
                     <h3>خدماتنا</h3>
                     <ul>
                         <li><a href="services.html#curtains">الستائر والبرادي</a></li>
-                        <li><a href="services.html#furniture">الكنب والتفصيل</a></li>
-                        <li><a href="services.html#decoration">الديكورات الحديثة</a></li>
-                        <li><a href="services.html#tiles">البلاط والسيراميك</a></li>
+                        <li><a href="services.html#furniture">الكنب والتنجيد والتفصيل</a></li>
+                        <li><a href="services.html#tailoring">تفصيل وخياطة الأقمشة</a></li>
+                        <li><a href="services.html#upholstery">تنجيد وتجديد الأثاث</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -339,22 +222,31 @@
                 </div>
                 <div class="footer-section">
                     <h3>معلومات الاتصال</h3>
-                    <p><i class="fas fa-phone"></i> +966 50 123 4567</p>
-                    <p><i class="fas fa-envelope"></i> info@lamsat-dekor.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> شارع الملك فهد، الرياض</p>
+                    <p><i class="fas fa-phone"></i> +962 786800071</p>
+                    <p><i class="fas fa-map-marker-alt"></i> عمان، الأردن</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 لمسات للديكور. جميع الحقوق محفوظة</p>
+                <p>&copy; 2024 لمسات للستائر. جميع الحقوق محفوظة</p>
             </div>
         </div>
     </footer>
 
+    <!-- Back to top button -->
+    <button class="back-to-top" aria-label="العودة لأعلى الصفحة"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- WhatsApp floating button -->
+    <a href="https://wa.me/962786800071?text=مرحباً، أريد استشارة حول خدمات الستائر والكنب" target="_blank" class="whatsapp-btn" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
+
     <script src="main.js"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- AOS Library for scroll animations -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init(); // Initialize AOS library
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        }); // Initialize AOS library
     </script>
 </body>
 </html>

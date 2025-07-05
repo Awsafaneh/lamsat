@@ -3,35 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>لمسات للديكور - الستائر والبرادي والكنب والتفصيل</title>
+    <title>لمسات للستائر - الستائر والكنب والتنجيد والتفصيل والقماش</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Dyslexic&display=swap" rel="stylesheet">
+    <!-- AOS Library CSS for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Accessibility Toolbar - Only Dark Mode Toggle -->
     <div class="accessibility-toolbar">
         <button onclick="toggleDarkMode()" title="وضع الليل/النهار"><i class="fas fa-moon"></i></button>
-        <button onclick="changeTextSize('small')" title="حجم الخط صغير">A-</button>
-        <button onclick="changeTextSize('normal')" title="حجم الخط عادي">A</button>
-        <button onclick="changeTextSize('large')" title="حجم الخط كبير">A+</button>
-        <button onclick="toggleHighContrast()" title="وضع التباين العالي"><i class="fas fa-adjust"></i></button>
-        <button onclick="toggleDyslexicFont()" title="خط عسر القراءة"><i class="fas fa-font"></i></button>
     </div>
 
+    <!-- Header -->
     <header class="header">
         <nav class="navbar">
             <div class="nav-container">
                 <div class="logo">
-                    <h2>لمسات للديكور</h2>
-                    <span>Lamsat Al Dekor</span>
+                    <img src="logo.png" alt="لمسات للستائر Logo" onerror="this.onerror=null;this.src='https://placehold.co/60x60/A38A5A/ffffff?text=Logo';">
+                    <div class="logo-text">
+                        <h2>لمسات للستائر</h2>
+                        <span>Lamasat Al Satayer</span>
+                    </div>
                 </div>
                 <ul class="nav-menu">
-                    <li><a href="#home" class="nav-link active">الرئيسية</a></li>
-                    <li><a href="#services" class="nav-link">خدماتنا</a></li>
-                    <li><a href="#products" class="nav-link">منتجاتنا</a></li>
-                    <li><a href="#gallery" class="nav-link">معرض الأعمال</a></li>
-                    <li><a href="#contact" class="nav-link">اتصل بنا</a></li>
+                    <li><a href="index.html" class="nav-link active">الرئيسية</a></li>
+                    <li><a href="services.html" class="nav-link">خدماتنا</a></li>
+                    <li><a href="gallery.html" class="nav-link">معرض الأعمال</a></li>
+                    <li><a href="contact.html" class="nav-link">اتصل بنا</a></li>
                 </ul>
                 <div class="hamburger">
                     <span></span>
@@ -42,33 +42,31 @@
         </nav>
     </header>
 
-    <section id="home" class="hero animate-on-scroll">
+    <!-- Hero Section -->
+    <section id="home" class="hero" data-aos="fade-in">
         <div class="hero-content container">
-            <div class="hero-text">
-                <h1>لمسات للديكور</h1>
-                <h2>نحول منزلك إلى تحفة فنية</h2>
-                <p>متخصصون في الستائر والبرادي والكنب والتفصيل وأعمال الديكورات الحديثة والبلاط</p>
+            <div class="hero-text" data-aos="fade-right" data-aos-delay="200">
+                <h1>لمسات للستائر</h1>
+                <h2>نحول منزلك إلى تحفة فنية من الأقمشة والتصاميم</h2>
+                <p>متخصصون في الستائر والبرادي، الكنب والتنجيد، التفصيل والقماش بأعلى جودة وإتقان</p>
                 <div class="hero-buttons">
-                    <a href="#services" class="btn btn-primary">خدماتنا <i class="fas fa-arrow-left"></i></a>
-                    <a href="#contact" class="btn btn-secondary">احجز استشارة مجانية <i class="fas fa-calendar-alt"></i></a>
+                    <a href="services.html" class="btn btn-primary">خدماتنا <i class="fas fa-arrow-left"></i></a>
+                    <a href="contact.html" class="btn btn-secondary">تواصل معنا <i class="fas fa-phone-alt"></i></a>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="hero-card animate-on-scroll">
-                    <i class="fas fa-home"></i>
-                    <h3>تصميم داخلي احترافي</h3>
+            <div class="hero-image" data-aos="fade-left" data-aos-delay="400">
+                <div class="hero-card">
+                    <i class="fas fa-couch"></i> <!-- أيقونة مناسبة للكنب/الأقمشة -->
+                    <h3>تصميم أقمشة وتنجيد احترافي</h3>
                 </div>
             </div>
         </div>
-        <div class="hero-stats animate-on-scroll">
+        <div class="hero-stats" data-aos="fade-up" data-aos-delay="600">
             <div class="stat">
-                <h3>+500</h3>
+                <h3>+5340</h3>
                 <p>مشروع منجز</p>
             </div>
-            <div class="stat">
-                <h3>+200</h3>
-                <p>عميل سعيد</p>
-            </div>
+            <!-- Removed 'عميل سعيد' -->
             <div class="stat">
                 <h3>10+</h3>
                 <p>سنوات خبرة</p>
@@ -76,14 +74,15 @@
         </div>
     </section>
 
+    <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <div class="section-header animate-on-scroll">
+            <div class="section-header" data-aos="fade-up">
                 <h2>خدماتنا المميزة</h2>
-                <p>نقدم مجموعة شاملة من خدمات الديكور والداخلية التي تُلبي جميع احتياجاتك.</p>
+                <p>نقدم مجموعة شاملة من خدمات الستائر والكنب والتنجيد والتفصيل التي تُلبي جميع احتياجاتك.</p>
             </div>
             <div class="services-grid">
-                <div class="service-card animate-on-scroll">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-icon">
                         <i class="fas fa-blinds"></i>
                     </div>
@@ -96,11 +95,11 @@
                         <li><i class="fas fa-check-circle"></i> ستائر بلاك آوت عازلة</li>
                     </ul>
                 </div>
-                <div class="service-card animate-on-scroll">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-icon">
                         <i class="fas fa-couch"></i>
                     </div>
-                    <h3>الكنب والتفصيل</h3>
+                    <h3>الكنب والتنجيد والتفصيل</h3>
                     <p>تصميم وتفصيل الكنب والأثاث المنزلي حسب الطلب، بجودة عالية وتصاميم فريدة.</p>
                     <ul>
                         <li><i class="fas fa-check-circle"></i> كنب مودرن وعصري</li>
@@ -109,216 +108,184 @@
                         <li><i class="fas fa-check-circle"></i> أقمشة فاخرة ومتينة</li>
                     </ul>
                 </div>
-                <div class="service-card animate-on-scroll">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="service-icon">
-                        <i class="fas fa-paint-brush"></i>
+                        <i class="fas fa-cut"></i> <!-- أيقونة جديدة للتفصيل -->
                     </div>
-                    <h3>الديكورات الحديثة</h3>
-                    <p>تصميم وتنفيذ الديكورات الداخلية بأحدث الاتجاهات العالمية واللمسات الفنية.</p>
+                    <h3>تفصيل وخياطة الأقمشة</h3>
+                    <p>خدمات تفصيل وخياطة الأقمشة المتنوعة للستائر والكنب والمفروشات بدقة واحترافية.</p>
                     <ul>
-                        <li><i class="fas fa-check-circle"></i> ديكورات جبسية مميزة</li>
-                        <li><i class="fas fa-check-circle"></i> إضاءة ديكورية مبتكرة</li>
-                        <li><i class="fas fa-check-circle"></i> تنسيق ألوان احترافي</li>
-                        <li><i class="fas fa-check-circle"></i> إكسسوارات منزلية فاخرة</li>
+                        <li><i class="fas fa-check-circle"></i> تفصيل ستائر حسب الطلب</li>
+                        <li><i class="fas fa-check-circle"></i> خياطة أغطية كنب ومفروشات</li>
+                        <li><i class="fas fa-check-circle"></i> تصميم وسائد وديكورات قماشية</li>
+                        <li><i class="fas fa-check-circle"></i> تشكيلة واسعة من الأقمشة</li>
                     </ul>
                 </div>
-                <div class="service-card animate-on-scroll">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="service-icon">
-                        <i class="fas fa-th-large"></i>
+                        <i class="fas fa-chair"></i> <!-- أيقونة جديدة للتنجيد -->
                     </div>
-                    <h3>البلاط والسيراميك</h3>
-                    <p>تركيب وتصميم البلاط والسيراميك بأحدث التصاميم والأنواع العالمية لجميع المساحات.</p>
+                    <h3>تنجيد وتجديد الأثاث</h3>
+                    <p>تجديد وتنجيد جميع أنواع الأثاث والكنب بأقمشة جديدة وتصاميم عصرية.</p>
                     <ul>
-                        <li><i class="fas fa-check-circle"></i> بلاط أرضيات عالية الجودة</li>
-                        <li><i class="fas fa-check-circle"></i> سيراميك جدران أنيق</li>
-                        <li><i class="fas fa-check-circle"></i> فسيفساء وتصاميم فريدة</li>
-                        <li><i class="fas fa-check-circle"></i> تصاميم مخصصة للمطابخ والحمامات</li>
+                        <li><i class="fas fa-check-circle"></i> تنجيد كنب وصالونات</li>
+                        <li><i class="fas fa-check-circle"></i> تجديد مقاعد وكراسي</li>
+                        <li><i class="fas fa-check-circle"></i> إصلاح وتغيير حشوات</li>
+                        <li><i class="fas fa-check-circle"></i> خيارات واسعة من الأقمشة</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Products Section -->
     <section id="products" class="products">
         <div class="container">
-            <div class="section-header animate-on-scroll">
+            <div class="section-header" data-aos="fade-up">
                 <h2>منتجاتنا المميزة</h2>
-                <p>اكتشف تشكيلة واسعة من المنتجات عالية الجودة التي تناسب ذوقك الرفيع.</p>
+                <p>اكتشف تشكيلة واسعة من المنتجات عالية الجودة من الستائر والأقمشة والكنب.</p>
             </div>
             <div class="products-grid">
-                <div class="product-card animate-on-scroll">
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="product-image">
                         <i class="fas fa-blinds"></i>
                     </div>
                     <h3>ستائر فاخرة</h3>
                     <p>ستائر بأقمشة فاخرة وتصاميم عصرية تضيف لمسة جمالية لمنزلك.</p>
-                    <a href="#contact" class="btn btn-outline">اطلب عرض سعر <i class="fas fa-tags"></i></a>
+                    <a href="contact.html" class="btn btn-outline">تواصل معنا <i class="fas fa-phone-alt"></i></a>
                 </div>
-                <div class="product-card animate-on-scroll">
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="product-image">
                         <i class="fas fa-couch"></i>
                     </div>
                     <h3>كنب مودرن</h3>
                     <p>كنب بتصاميم حديثة وألوان متناسقة، يوفر الراحة والأناقة.</p>
-                    <a href="#contact" class="btn btn-outline">اطلب عرض سعر <i class="fas fa-tags"></i></a>
+                    <a href="contact.html" class="btn btn-outline">تواصل معنا <i class="fas fa-phone-alt"></i></a>
                 </div>
-                <div class="product-card animate-on-scroll">
+                <div class="product-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="product-image">
-                        <i class="fas fa-th-large"></i>
+                        <i class="fas fa-cut"></i>
                     </div>
-                    <h3>بلاط إيطالي</h3>
-                    <p>بلاط إيطالي عالي الجودة بتصاميم فريدة تناسب جميع الأذواق.</p>
-                    <a href="#contact" class="btn btn-outline">اطلب عرض سعر <i class="fas fa-tags"></i></a>
+                    <h3>أقمشة تفصيل</h3>
+                    <p>تشكيلة واسعة من الأقمشة الفاخرة للستائر والكنب والتنجيد.</p>
+                    <a href="contact.html" class="btn btn-outline">تواصل معنا <i class="fas fa-phone-alt"></i></a>
                 </div>
-                <div class="product-card animate-on-scroll">
+                <div class="product-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="product-image">
-                        <i class="fas fa-lightbulb"></i>
+                        <i class="fas fa-chair"></i>
                     </div>
-                    <h3>إضاءة ديكورية</h3>
-                    <p>إضاءة ديكورية تضيف لمسة جمالية وإشراقًا لمنزلك بأسلوب عصري.</p>
-                    <a href="#contact" class="btn btn-outline">اطلب عرض سعر <i class="fas fa-tags"></i></a>
+                    <h3>أثاث منجد</h3>
+                    <p>قطع أثاث منجدة يدوياً بجودة عالية وتصاميم فريدة.</p>
+                    <a href="contact.html" class="btn btn-outline">تواصل معنا <i class="fas fa-phone-alt"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Gallery Section -->
     <section id="gallery" class="gallery">
         <div class="container">
-            <div class="section-header animate-on-scroll">
+            <div class="section-header" data-aos="fade-up">
                 <h2>معرض أعمالنا</h2>
                 <p>استلهم من مشاريعنا المنجزة، وشاهد كيف نحول الأفكار إلى واقع ملموس.</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item animate-on-scroll">
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
                     <div class="gallery-content">
                         <h3>صالون فاخر</h3>
                         <p>تصميم كامل للصالون مع الستائر والكنب الفاخر.</p>
                     </div>
                 </div>
-                <div class="gallery-item animate-on-scroll">
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
                     <div class="gallery-content">
-                        <h3>مطبخ عصري</h3>
-                        <p>بلاط مطبخ بتصميم عصري وأنيق، يجمع بين الجمال والوظيفة.</p>
+                        <h3>كنب مودرن</h3>
+                        <p>كنب بتصميم عصري وأنيق، يجمع بين الجمال والراحة.</p>
                     </div>
                 </div>
-                <div class="gallery-item animate-on-scroll">
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
                     <div class="gallery-content">
                         <h3>غرفة نوم رومانسية</h3>
                         <p>ستائر وغرفة نوم بتصميم رومانسي وهادئ، لمساحة مريحة.</p>
                     </div>
                 </div>
-                <div class="gallery-item animate-on-scroll">
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
                     <div class="gallery-content">
-                        <h3>حمام فاخر</h3>
-                        <p>سيراميك حمام بتصميم فاخر وتفاصيل جذابة.</p>
+                        <h3>تنجيد كراسي</h3>
+                        <p>تجديد وتنجيد كراسي الطعام بأقمشة فاخرة.</p>
                     </div>
                 </div>
-                <div class="gallery-item animate-on-scroll">
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
                     <div class="gallery-content">
                         <h3>غرفة معيشة مودرن</h3>
                         <p>كنب وستائر بتصميم مودرن وعملي، لمساحة معيشة مثالية.</p>
                     </div>
                 </div>
-                <div class="gallery-item animate-on-scroll">
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="600">
                     <div class="gallery-content">
-                        <h3>ممر أنيق</h3>
-                        <p>بلاط وإضاءة للممر، لإضافة لمسة فنية لمداخل المنزل.</p>
+                        <h3>تفصيل وسائد</h3>
+                        <p>تفصيل وسائد ديكورية بأقمشة متنوعة.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <div class="section-header animate-on-scroll">
+            <div class="section-header" data-aos="fade-up">
                 <h2>اتصل بنا</h2>
-                <p>احصل على استشارة مجانية وتصميم مخصص لمنزلك، فريقنا بانتظارك.</p>
+                <p>تواصل معنا للحصول على استشارة مجانية وتصميم مخصص لمنزلك، فريقنا بانتظارك.</p>
             </div>
             <div class="contact-content">
-                <div class="contact-info animate-on-scroll">
+                <div class="contact-info" data-aos="fade-right" data-aos-delay="100">
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
                         <div>
                             <h3>اتصل بنا</h3>
-                            <p>+966 50 123 4567</p>
+                            <p>+962 786800071</p>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
+                        <i class="fab fa-whatsapp"></i>
                         <div>
-                            <h3>راسلنا</h3>
-                            <p>info@lamsat-dekor.com</p>
+                            <h3>واتساب</h3>
+                            <p>+962 786800071</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <h3>موقعنا</h3>
-                            <p>شارع الملك فهد، الرياض</p>
+                            <p>عمان، الأردن</p>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <h3>ساعات العمل</h3>
-                            <p>الأحد - الخميس: 9 ص - 9 م</p>
-                            <p>الجمعة - السبت: 10 ص - 8 م</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form animate-on-scroll">
-                    <form id="mainContactForm">
-                        <div class="form-group">
-                            <input type="text" placeholder="الاسم الكامل" required id="name">
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" placeholder="رقم الهاتف" required id="phone">
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="البريد الإلكتروني" required id="email">
-                        </div>
-                        <div class="form-group">
-                            <select required id="service">
-                                <option value="">اختر الخدمة المطلوبة</option>
-                                <option value="curtains">الستائر والبرادي</option>
-                                <option value="furniture">الكنب والتفصيل</option>
-                                <option value="decoration">الديكورات الحديثة</option>
-                                <option value="tiles">البلاط والسيراميك</option>
-                                <option value="consultation">استشارة مجانية</option>
-                                <option value="other">خدمات أخرى</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="تفاصيل المشروع" rows="5" required id="message"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">إرسال الطلب <i class="fas fa-paper-plane"></i></button>
-                    </form>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>لمسات للديكور</h3>
-                    <p>نحول منزلك إلى تحفة فنية مع أفضل خدمات الديكور والداخلية</p>
+                    <h3>لمسات للستائر</h3>
+                    <p>نحول منزلك إلى تحفة فنية مع أفضل خدمات الستائر والكنب والتنجيد والتفصيل.</p>
                     <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://wa.me/966501234567" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/share/1GKXR5TVfR/?mibextid=wwXIfr" target="_blank" aria-label="فيسبوك"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/lamasat_beautiful?igsh=MWJ5aTFtYWx4eXE3cA==" target="_blank" aria-label="إنستغرام"><i class="fab fa-instagram"></i></a>
+                        <!-- Removed Twitter and Youtube -->
+                        <a href="https://wa.me/962786800071" target="_blank" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 <div class="footer-section">
                     <h3>خدماتنا</h3>
                     <ul>
                         <li><a href="services.html#curtains">الستائر والبرادي</a></li>
-                        <li><a href="services.html#furniture">الكنب والتفصيل</a></li>
-                        <li><a href="services.html#decoration">الديكورات الحديثة</a></li>
-                        <li><a href="services.html#tiles">البلاط والسيراميك</a></li>
+                        <li><a href="services.html#furniture">الكنب والتنجيد والتفصيل</a></li>
+                        <li><a href="services.html#tailoring">تفصيل وخياطة الأقمشة</a></li>
+                        <li><a href="services.html#upholstery">تنجيد وتجديد الأثاث</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -332,22 +299,31 @@
                 </div>
                 <div class="footer-section">
                     <h3>معلومات الاتصال</h3>
-                    <p><i class="fas fa-phone"></i> +966 50 123 4567</p>
-                    <p><i class="fas fa-envelope"></i> info@lamsat-dekor.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> شارع الملك فهد، الرياض</p>
+                    <p><i class="fas fa-phone"></i> +962 786800071</p>
+                    <p><i class="fas fa-map-marker-alt"></i> عمان، الأردن</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 لمسات للديكور. جميع الحقوق محفوظة</p>
+                <p>&copy; 2024 لمسات للستائر. جميع الحقوق محفوظة</p>
             </div>
         </div>
     </footer>
 
+    <!-- Back to top button -->
+    <button class="back-to-top" aria-label="العودة لأعلى الصفحة"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- WhatsApp floating button -->
+    <a href="https://wa.me/962786800071?text=مرحباً، أريد استشارة حول خدمات الستائر والكنب" target="_blank" class="whatsapp-btn" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
+
     <script src="main.js"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- AOS Library for scroll animations -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init(); // Initialize AOS library
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        }); // Initialize AOS library
     </script>
 </body>
 </html>
