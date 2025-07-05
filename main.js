@@ -122,7 +122,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     initAccessibility(); // Call on DOMContentLoaded
 
-    // No notification system needed as forms are removed, but keeping the function definition for completeness if other parts of the site might use it.
+    // No notification system needed as forms are removed.
+    // The function `showNotification` is no longer called from form submissions.
+    // Keeping it here for completeness, but it's effectively unused now.
     function showNotification(message, type = 'info') {
         const existingNotifications = document.querySelectorAll('.notification');
         existingNotifications.forEach(notification => notification.remove());
