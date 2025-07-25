@@ -1,31 +1,38 @@
 /* Root Variables */
 :root {
-    --primary-color: #1C3F60; /* أزرق داكن من خلفية الشعار */
-    --secondary-color: #FFFFFF; /* أبيض/أزرق سماوي من الشعار والنص */
-    --accent-color: #FFC72C; /* أصفر/ذهبي من خطوط الشعار والنص */
-    --highlight-color: #FFC72C; /* تم توحيدها مع الـ accent-color للأزرار والأيقونات */
-    --text-color: #333; /* لون نص داكن للقراءة الجيدة */
-    --light-gray: #f8f9fa; /* خلفية رمادية فاتحة لبعض الأقسام */
-    --dark-gray: #212529; /* استخدام عام للرمادي الداكن */
+    /* Colors based on the provided logo (Blue-Gray, White, Light Blue-Gray) */
+    --primary-color: #3C4A5A; /* Dark Blue-Gray from logo background and main text */
+    --secondary-color: #FFFFFF; /* White from the inner circle and main light elements */
+    --accent-color: #7A90A2; /* Light Blue-Gray from surrounding lines and secondary text */
+    --highlight-color: #A38A5A; /* Placeholder for a warmer accent if needed, can be adjusted */
+                                /* Keeping a warm accent for buttons/highlights as it often works well
+                                   with cool grays, but can be changed to a brighter blue if preferred.
+                                   Let's try a subtle, slightly desaturated gold/brown for a sophisticated touch */
+    --gold-like-accent: #C8AA74; /* A refined gold-like accent to provide contrast and warmth */
+
+
+    /* General Text & Backgrounds */
+    --text-color: #333; /* Dark text for good readability on light backgrounds */
+    --light-gray: #f8f9fa; /* A very light neutral background */
     --white: #ffffff;
+
+    /* Dark Mode Specific Colors */
+    --dark-bg: #2B3A49; /* Even darker blue-gray for dark mode background */
+    --dark-card-bg: #3F5161; /* Medium dark blue-gray for card backgrounds in dark mode */
+    --dark-text: #ffffff; /* White text for dark mode */
+    --dark-border: #526374; /* Slightly lighter border in dark mode */
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, #2B3A49 100%); /* Gradient using logo blue-grays */
+    --gradient-dark: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-card-bg) 100%);
+
+    /* Other Variables (keeping consistent with your original structure) */
     --transition: all 0.3s ease;
     --box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    --dark-bg: #142B41; /* درجة أغمق من الأزرق الداكن للوضع الليلي */
-    --dark-card-bg: #1F4B77; /* درجة متوسطة من الأزرق للوضع الليلي */
-    --dark-text: #ffffff;
-    --dark-border: #2C5A88; /* حدود في الوضع الليلي */
     --transition-smooth: all 0.3s ease-in-out;
-    --hover-scale: scale(1.03); /* تكبير بسيط عند التحويم */
-    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* ظل خفيف للبطاقات */
-    --button-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* ظل للأزرار */
-    --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, #142B41 100%); /* تدرج لوني يعتمد على الأزرق الداكن */
-    --gradient-dark: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-card-bg) 100%);
-    
-    /* الألوان المعدلة لتتناسب مع اللوجو الأول بشكل صريح لسهولة التتبع */
-    --logo-dark-blue: #1C3F60;
-    --logo-light-blue: #FFFFFF; /* اللون الفاتح الرئيسي للوجو */
-    --logo-yellow-accent: #FFC72C;
-    --section-header-text: var(--primary-color); /* استخدام الأزرق الداكن لعناوين الأقسام */
+    --hover-scale: scale(1.03);
+    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --button-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 /* Reset and Base Styles */
@@ -43,9 +50,9 @@ body {
     font-family: 'Cairo', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: var(--logo-light-blue); /* خلفية الجسم أبيض/أزرق فاتح */
-    direction: rtl; /* للعربية */
-    text-align: right; /* للعربية */
+    background-color: var(--light-gray); /* Keeping a general light gray background for contrast */
+    direction: rtl; /* For Arabic text */
+    text-align: right; /* For Arabic text */
 }
 
 .container {
@@ -66,7 +73,7 @@ body.dark-mode {
 }
 
 .dark-mode .logo-text h2 {
-    color: var(--logo-light-blue);
+    color: var(--secondary-color);
 }
 
 .dark-mode .nav-link {
@@ -75,15 +82,15 @@ body.dark-mode {
 
 .dark-mode .nav-link:hover,
 .dark-mode .nav-link.active {
-    color: var(--logo-yellow-accent);
+    color: var(--gold-like-accent); /* Use gold-like accent in dark mode */
 }
 
 .dark-mode .nav-link::after {
-    background: var(--logo-yellow-accent);
+    background: var(--gold-like-accent);
 }
 
 .dark-mode .hamburger span {
-    background: var(--logo-light-blue);
+    background: var(--secondary-color);
 }
 
 .dark-mode .hero {
@@ -97,18 +104,18 @@ body.dark-mode {
 }
 
 .dark-mode .hero-card {
-    background: rgba(var(--logo-dark-blue), 0.5); /* أزرق شفاف في الوضع الليلي */
-    border: 1px solid rgba(var(--logo-yellow-accent), 0.3);
+    background: rgba(var(--primary-color), 0.5); /* Semi-transparent primary color */
+    border: 1px solid rgba(var(--gold-like-accent), 0.3);
     color: var(--dark-text);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
 .dark-mode .hero-card i {
-    color: var(--logo-yellow-accent);
+    color: var(--gold-like-accent);
 }
 
 .dark-mode .stat h3 {
-    color: var(--logo-yellow-accent);
+    color: var(--gold-like-accent);
 }
 
 .dark-mode .stat p {
@@ -116,7 +123,7 @@ body.dark-mode {
 }
 
 .dark-mode .section-header h2 {
-    color: var(--logo-light-blue);
+    color: var(--secondary-color);
 }
 
 .dark-mode .section-header p {
@@ -134,7 +141,7 @@ body.dark-mode {
 }
 
 .dark-mode .service-card::before {
-    background: var(--logo-yellow-accent);
+    background: var(--gold-like-accent);
 }
 
 .dark-mode .service-icon {
@@ -143,11 +150,11 @@ body.dark-mode {
 }
 
 .dark-mode .service-icon i {
-    color: var(--logo-yellow-accent);
+    color: var(--gold-like-accent);
 }
 
 .dark-mode .service-card h3 {
-    color: var(--logo-light-blue);
+    color: var(--secondary-color);
 }
 
 .dark-mode .service-card p {
@@ -159,7 +166,7 @@ body.dark-mode {
 }
 
 .dark-mode .service-card ul li::before {
-    color: var(--logo-yellow-accent);
+    color: var(--gold-like-accent);
 }
 
 .dark-mode .products {
@@ -172,16 +179,16 @@ body.dark-mode {
 }
 
 .dark-mode .product-image {
-    background: linear-gradient(135deg, var(--logo-yellow-accent), var(--logo-dark-blue));
+    background: linear-gradient(135deg, var(--gold-like-accent), var(--primary-color));
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 .dark-mode .product-image i {
-    color: var(--logo-light-blue);
+    color: var(--secondary-color);
 }
 
 .dark-mode .product-card h3 {
-    color: var(--logo-light-blue);
+    color: var(--secondary-color);
 }
 
 .dark-mode .product-card p {
@@ -202,7 +209,7 @@ body.dark-mode {
 }
 
 .dark-mode .gallery-content h3 {
-    color: var(--logo-yellow-accent);
+    color: var(--gold-like-accent);
 }
 
 .dark-mode .gallery-content p {
@@ -210,8 +217,8 @@ body.dark-mode {
 }
 
 .dark-mode .tag {
-    background: var(--logo-yellow-accent);
-    color: var(--logo-dark-blue);
+    background: var(--gold-like-accent);
+    color: var(--primary-color);
 }
 
 .dark-mode .project-stats {
@@ -224,15 +231,15 @@ body.dark-mode {
 }
 
 .dark-mode .stat-icon {
-    background: linear-gradient(135deg, var(--logo-yellow-accent), var(--logo-dark-blue));
+    background: linear-gradient(135deg, var(--gold-like-accent), var(--primary-color));
 }
 
 .dark-mode .stat-icon i {
-    color: var(--logo-light-blue);
+    color: var(--secondary-color);
 }
 
 .dark-mode .stat-content h3 {
-    color: var(--logo-light-blue);
+    color: var(--secondary-color);
 }
 
 .dark-mode .stat-content p {
@@ -244,7 +251,7 @@ body.dark-mode {
 }
 
 .dark-mode .contact-info-section h2 {
-    color: var(--logo-light-blue);
+    color: var(--secondary-color);
 }
 
 .dark-mode .contact-info-section p {
@@ -257,15 +264,15 @@ body.dark-mode {
 }
 
 .dark-mode .method-icon {
-    background: linear-gradient(135deg, var(--logo-yellow-accent), var(--logo-dark-blue));
+    background: linear-gradient(135deg, var(--gold-like-accent), var(--primary-color));
 }
 
 .dark-mode .method-icon i {
-    color: var(--logo-light-blue);
+    color: var(--secondary-color);
 }
 
 .dark-mode .method-content h3 {
-    color: var(--logo-light-blue);
+    color: var(--secondary-color);
 }
 
 .dark-mode .method-content p {
@@ -273,7 +280,7 @@ body.dark-mode {
 }
 
 .dark-mode .method-note {
-    color: var(--logo-yellow-accent);
+    color: var(--gold-like-accent);
 }
 
 .dark-mode .social-links-contact {
@@ -282,7 +289,7 @@ body.dark-mode {
 }
 
 .dark-mode .social-links-contact h3 {
-    color: var(--logo-light-blue);
+    color: var(--secondary-color);
 }
 
 .dark-mode .social-link {
@@ -291,8 +298,8 @@ body.dark-mode {
 }
 
 .dark-mode .social-link:hover {
-    background: var(--logo-yellow-accent);
-    color: var(--logo-dark-blue);
+    background: var(--gold-like-accent);
+    color: var(--primary-color);
 }
 
 .dark-mode .footer {
@@ -301,7 +308,7 @@ body.dark-mode {
 }
 
 .dark-mode .footer-section h3 {
-    color: var(--logo-yellow-accent);
+    color: var(--gold-like-accent);
 }
 
 .dark-mode .footer-section p,
@@ -310,17 +317,17 @@ body.dark-mode {
 }
 
 .dark-mode .footer-section ul li a:hover {
-    color: var(--logo-yellow-accent);
+    color: var(--gold-like-accent);
 }
 
 .dark-mode .social-links a {
-    background: var(--logo-dark-blue);
-    color: var(--logo-light-blue);
+    background: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 .dark-mode .social-links a:hover {
-    background: var(--logo-yellow-accent);
-    color: var(--logo-dark-blue);
+    background: var(--gold-like-accent);
+    color: var(--primary-color);
 }
 
 .dark-mode .footer-bottom {
@@ -329,12 +336,12 @@ body.dark-mode {
 }
 
 .dark-mode .back-to-top {
-    background-color: var(--logo-yellow-accent);
-    color: var(--logo-dark-blue);
+    background-color: var(--gold-like-accent);
+    color: var(--primary-color);
 }
 .dark-mode .whatsapp-btn {
-    background-color: var(--logo-yellow-accent);
-    color: var(--logo-dark-blue);
+    background-color: var(--gold-like-accent);
+    color: var(--primary-color);
 }
 
 /* Header Styles */
@@ -342,7 +349,7 @@ body.dark-mode {
     position: fixed;
     top: 0;
     width: 100%;
-    background: var(--logo-light-blue); /* خلفية الهيدر أبيض/أزرق فاتح */
+    background: var(--secondary-color); /* Header background: White */
     backdrop-filter: blur(10px);
     z-index: 1000;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
@@ -375,7 +382,7 @@ body.dark-mode {
 }
 
 .logo-text h2 {
-    color: var(--logo-dark-blue); /* لون اسم الشركة أزرق داكن */
+    color: var(--primary-color); /* Logo text: Dark Blue-Gray */
     font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 0.2rem;
@@ -389,7 +396,7 @@ body.dark-mode {
 
 .nav-link {
     text-decoration: none;
-    color: var(--logo-dark-blue); /* لون روابط القائمة أزرق داكن */
+    color: var(--primary-color); /* Nav links: Dark Blue-Gray */
     font-weight: 600;
     transition: color 0.3s ease;
     position: relative;
@@ -397,7 +404,7 @@ body.dark-mode {
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--logo-yellow-accent); /* لون روابط القائمة عند التحويم أو النشاط أصفر/ذهبي */
+    color: var(--accent-color); /* Nav links hover/active: Light Blue-Gray */
 }
 
 .nav-link::after {
@@ -407,7 +414,7 @@ body.dark-mode {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--logo-yellow-accent);
+    background: var(--accent-color);
     transition: width 0.3s ease;
 }
 
@@ -425,9 +432,10 @@ body.dark-mode {
 .hamburger span {
     width: 25px;
     height: 3px;
-    background: var(--logo-dark-blue);
+    background: var(--primary-color);
     margin: 3px 0;
-    transition: 0.3s;
+    border-radius: 2px;
+    transition: all 0.3s ease;
 }
 
 /* Hero Section */
@@ -436,8 +444,8 @@ body.dark-mode {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: var(--gradient-primary); /* خلفية الهيرو متدرجة من الأزرق الداكن */
-    color: var(--logo-light-blue); /* لون النص أبيض/أزرق فاتح */
+    background: var(--gradient-primary); /* Hero background: Gradient of dark blue-grays */
+    color: var(--secondary-color); /* Hero text: White */
     padding: 120px 0 60px;
     position: relative;
     overflow: hidden;
@@ -471,7 +479,7 @@ body.dark-mode {
     font-weight: 700;
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    color: var(--logo-light-blue); /* لون العنوان أبيض/أزرق فاتح */
+    color: var(--secondary-color); /* Hero H1: White */
 }
 
 .hero-text h2 {
@@ -479,7 +487,7 @@ body.dark-mode {
     font-weight: 400;
     margin-bottom: 1.5rem;
     opacity: 0.9;
-    color: var(--logo-yellow-accent); /* لون العنوان الفرعي أصفر/ذهبي */
+    color: var(--accent-color); /* Hero H2: Light Blue-Gray */
 }
 
 .hero-text p {
@@ -487,7 +495,7 @@ body.dark-mode {
     margin-bottom: 2rem;
     opacity: 0.8;
     line-height: 1.8;
-    color: var(--logo-light-blue); /* لون النص أبيض/أزرق فاتح */
+    color: var(--secondary-color); /* Hero P: White */
 }
 
 .hero-buttons {
@@ -510,37 +518,37 @@ body.dark-mode {
 }
 
 .btn-primary {
-    background: var(--logo-yellow-accent); /* زر أساسي أصفر/ذهبي */
-    color: var(--logo-dark-blue); /* نص الزر أزرق داكن */
+    background: var(--gold-like-accent); /* Primary button: Gold-like accent */
+    color: var(--primary-color); /* Primary button text: Dark Blue-Gray */
 }
 
 .btn-primary:hover {
-    background: #E0B022; /* درجة أغمق قليلاً من الأصفر/الذهبي */
+    background: #A88F5C; /* Slightly darker gold on hover */
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(255, 199, 44, 0.3);
+    box-shadow: 0 10px 20px rgba(200, 170, 116, 0.3);
 }
 
 .btn-secondary {
     background: transparent;
-    color: var(--logo-light-blue); /* زر ثانوي نص أبيض/أزرق فاتح */
-    border: 2px solid var(--logo-light-blue); /* حدود بيضاء/زرقاء فاتحة */
+    color: var(--secondary-color); /* Secondary button text: White */
+    border: 2px solid var(--secondary-color); /* Secondary button border: White */
 }
 
 .btn-secondary:hover {
-    background: var(--logo-light-blue); /* خلفية بيضاء/زرقاء فاتحة */
-    color: var(--logo-dark-blue); /* نص أزرق داكن */
+    background: var(--secondary-color); /* Secondary button hover background: White */
+    color: var(--primary-color); /* Secondary button hover text: Dark Blue-Gray */
     transform: translateY(-2px);
 }
 
 .btn-outline {
     background: transparent;
-    color: var(--logo-yellow-accent); /* زر خارجي نص أصفر/ذهبي */
-    border: 2px solid var(--logo-yellow-accent); /* حدود صفراء/ذهبية */
+    color: var(--gold-like-accent); /* Outline button text: Gold-like accent */
+    border: 2px solid var(--gold-like-accent); /* Outline button border: Gold-like accent */
 }
 
 .btn-outline:hover {
-    background: var(--logo-yellow-accent); /* خلفية صفراء/ذهبية */
-    color: var(--logo-dark-blue); /* نص أزرق داكن */
+    background: var(--gold-like-accent); /* Outline button hover background: Gold-like accent */
+    color: var(--primary-color); /* Outline button hover text: Dark Blue-Gray */
     transform: translateY(-2px);
 }
 
@@ -552,16 +560,16 @@ body.dark-mode {
 }
 
 .hero-card {
-    background: rgba(var(--logo-dark-blue), 0.3); /* أزرق شفاف */
+    background: rgba(var(--primary-color), 0.3); /* Hero card background: Semi-transparent Dark Blue-Gray */
     backdrop-filter: blur(10px);
     padding: 3rem;
     border-radius: 20px;
     text-align: center;
-    border: 1px solid rgba(var(--logo-yellow-accent), 0.2); /* حدود صفراء/ذهبية شفافة */
+    border: 1px solid rgba(var(--accent-color), 0.2); /* Hero card border: Semi-transparent Light Blue-Gray */
     transition: transform 0.6s ease;
     transform-style: preserve-3d;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    color: var(--logo-light-blue); /* نص أبيض/أزرق فاتح */
+    color: var(--secondary-color); /* Hero card text: White */
 }
 
 .hero-card:hover {
@@ -571,7 +579,7 @@ body.dark-mode {
 .hero-card i {
     font-size: 4rem;
     margin-bottom: 1rem;
-    color: var(--logo-yellow-accent); /* أيقونة صفراء/ذهبية */
+    color: var(--gold-like-accent); /* Hero card icon: Gold-like accent */
     text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
 }
 
@@ -591,13 +599,13 @@ body.dark-mode {
 
 .stat {
     text-align: center;
-    color: var(--logo-light-blue); /* نص الإحصائيات أبيض/أزرق فاتح */
+    color: var(--secondary-color); /* Stats text: White */
 }
 
 .stat h3 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--logo-yellow-accent); /* رقم الإحصائية أصفر/ذهبي */
+    color: var(--gold-like-accent); /* Stats number: Gold-like accent */
     margin-bottom: 0.5rem;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
 }
@@ -611,13 +619,28 @@ body.dark-mode {
 .section-header {
     text-align: center;
     margin-bottom: 4rem;
+    padding-top: 60px; /* Added padding to top for spacing */
 }
 
 .section-header h2 {
     font-size: 2.5rem;
-    color: var(--logo-dark-blue); /* عنوان القسم أزرق داكن */
+    color: var(--primary-color); /* Section header H2: Dark Blue-Gray */
     margin-bottom: 1rem;
     font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--accent-color); /* Underline: Light Blue-Gray */
+    border-radius: 2px;
 }
 
 .section-header p {
@@ -630,7 +653,7 @@ body.dark-mode {
 /* Services Section */
 .services {
     padding: 80px 0;
-    background: var(--logo-light-blue); /* خلفية الخدمات أبيض/أزرق فاتح */
+    background: var(--light-gray); /* Services section background: Light Gray */
 }
 
 .services-grid {
@@ -640,12 +663,12 @@ body.dark-mode {
 }
 
 .service-card {
-    background: white; /* خلفية بطاقة الخدمة بيضاء */
+    background: white; /* Service card background: White */
     padding: 2.5rem;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
-    border: 1px solid var(--logo-light-blue); /* حدود بيضاء/زرقاء فاتحة */
+    border: 1px solid var(--secondary-color); /* Service card border: White */
     position: relative;
     overflow: hidden;
 }
@@ -657,7 +680,7 @@ body.dark-mode {
     left: 0;
     width: 100%;
     height: 5px;
-    background: var(--logo-yellow-accent); /* شريط أصفر/ذهبي علوي */
+    background: var(--gold-like-accent); /* Top stripe: Gold-like accent */
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s ease-out;
@@ -667,7 +690,6 @@ body.dark-mode {
     transform: scaleX(1);
 }
 
-
 .service-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
@@ -676,7 +698,7 @@ body.dark-mode {
 .service-icon {
     width: 80px;
     height: 80px;
-    background: var(--gradient-primary); /* خلفية أيقونة متدرجة */
+    background: var(--gradient-primary); /* Service icon background: Gradient of dark blue-grays */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -687,12 +709,12 @@ body.dark-mode {
 
 .service-icon i {
     font-size: 2rem;
-    color: var(--logo-light-blue); /* أيقونة بيضاء/زرقاء فاتحة */
+    color: var(--secondary-color); /* Service icon: White */
 }
 
 .service-card h3 {
     font-size: 1.5rem;
-    color: var(--logo-dark-blue); /* عنوان الخدمة أزرق داكن */
+    color: var(--primary-color); /* Service card H3: Dark Blue-Gray */
     margin-bottom: 1rem;
     font-weight: 600;
 }
@@ -718,14 +740,14 @@ body.dark-mode {
     content: '✓';
     position: absolute;
     right: 0;
-    color: var(--logo-yellow-accent); /* علامة الصح صفراء/ذهبية */
+    color: var(--gold-like-accent); /* Checkmark: Gold-like accent */
     font-weight: bold;
 }
 
 /* Products Section */
 .products {
     padding: 80px 0;
-    background: var(--light-gray); /* خلفية المنتجات رمادي فاتح */
+    background: var(--secondary-color); /* Products section background: White */
 }
 
 .products-grid {
@@ -735,7 +757,7 @@ body.dark-mode {
 }
 
 .product-card {
-    background: white; /* خلفية بطاقة المنتج بيضاء */
+    background: white; /* Product card background: White */
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
@@ -751,7 +773,7 @@ body.dark-mode {
 .product-image {
     width: 100px;
     height: 100px;
-    background: linear-gradient(135deg, var(--logo-yellow-accent), var(--logo-dark-blue)); /* خلفية أيقونة متدرجة صفراء/ذهبية وزرقاء داكنة */
+    background: linear-gradient(135deg, var(--gold-like-accent), var(--primary-color)); /* Product icon background: Gold-like and Dark Blue-Gray */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -762,12 +784,12 @@ body.dark-mode {
 
 .product-image i {
     font-size: 2.5rem;
-    color: var(--logo-light-blue); /* أيقونة بيضاء/زرقاء فاتحة */
+    color: var(--secondary-color); /* Product icon: White */
 }
 
 .product-card h3 {
     font-size: 1.3rem;
-    color: var(--logo-dark-blue); /* عنوان المنتج أزرق داكن */
+    color: var(--primary-color); /* Product card H3: Dark Blue-Gray */
     margin-bottom: 1rem;
     font-weight: 600;
 }
@@ -781,7 +803,7 @@ body.dark-mode {
 /* Gallery Section */
 .gallery {
     padding: 80px 0;
-    background: var(--logo-light-blue); /* خلفية المعرض أبيض/أزرق فاتح */
+    background: var(--light-gray); /* Gallery section background: Light Gray */
 }
 
 .gallery-grid {
@@ -792,7 +814,7 @@ body.dark-mode {
 
 .gallery-item {
     height: 250px;
-    background: var(--gradient-primary); /* خلفية عنصر المعرض متدرجة */
+    background: var(--gradient-primary); /* Gallery item background: Gradient of dark blue-grays */
     border-radius: 15px;
     display: flex;
     align-items: center;
@@ -808,30 +830,30 @@ body.dark-mode {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
-/* Unique gradients for gallery items based on new palette */
+/* Specific background images for gallery items (placeholders based on color scheme) */
 .gallery-item:nth-child(1) {
-    background: linear-gradient(135deg, var(--logo-dark-blue) 0%, #142B41 100%); /* أزرق أغمق */
+    background: linear-gradient(135deg, var(--primary-color) 0%, #2B3A49 100%); /* Dark Blue-Gray gradient */
 }
 .gallery-item:nth-child(2) {
-    background: linear-gradient(135deg, var(--logo-yellow-accent) 0%, var(--logo-dark-blue) 100%); /* أصفر لأزرق */
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%); /* Light Blue-Gray to Dark Blue-Gray */
 }
 .gallery-item:nth-child(3) {
-    background: linear-gradient(135deg, var(--logo-light-blue) 0%, var(--logo-yellow-accent) 100%); /* أبيض لأصفر */
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%); /* White to Light Blue-Gray */
 }
 .gallery-item:nth-child(4) {
-    background: linear-gradient(135deg, #7F8C8D 0%, #5E6971 100%); /* يمكن تعديله لألوان متناسقة مع اللوجو */
+    background: linear-gradient(135deg, #7F8C8D 0%, #5E6971 100%); /* Neutral gray, can be adjusted */
 }
 .gallery-item:nth-child(5) {
-    background: linear-gradient(135deg, #A8A8A8 0%, #8E8E8E 100%); /* يمكن تعديله لألوان متناسقة مع اللوجو */
+    background: linear-gradient(135deg, #A8A8A8 0%, #8E8E8E 100%); /* Neutral gray, can be adjusted */
 }
 .gallery-item:nth-child(6) {
-    background: linear-gradient(135deg, var(--logo-dark-blue) 0%, var(--logo-yellow-accent) 100%); /* أزرق لأصفر */
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--gold-like-accent) 100%); /* Dark Blue-Gray to Gold-like */
 }
 
 
 .gallery-content {
     text-align: center;
-    color: var(--logo-light-blue); /* نص محتوى المعرض أبيض/أزرق فاتح */
+    color: var(--secondary-color); /* Gallery content text: White */
     z-index: 2;
     position: relative;
     opacity: 0;
@@ -848,7 +870,7 @@ body.dark-mode {
 /* Contact Section (Homepage) */
 .contact {
     padding: 80px 0;
-    background: var(--light-gray);
+    background: var(--secondary-color); /* Contact section background: White */
 }
 
 .contact-content {
@@ -868,7 +890,7 @@ body.dark-mode {
     align-items: center;
     gap: 1rem;
     padding: 1.5rem;
-    background: white; /* خلفية عنصر الاتصال بيضاء */
+    background: white; /* Contact item background: White */
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
@@ -881,10 +903,10 @@ body.dark-mode {
 
 .contact-item i {
     font-size: 1.5rem;
-    color: var(--logo-yellow-accent); /* أيقونة الاتصال صفراء/ذهبية */
+    color: var(--gold-like-accent); /* Contact icon: Gold-like accent */
     width: 50px;
     height: 50px;
-    background: rgba(255, 199, 44, 0.1); /* خلفية أيقونة شفافة صفراء/ذهبية */
+    background: rgba(200, 170, 116, 0.1); /* Semi-transparent gold-like accent background */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -892,7 +914,7 @@ body.dark-mode {
 }
 
 .contact-item h3 {
-    color: var(--logo-dark-blue); /* عنوان الاتصال أزرق داكن */
+    color: var(--primary-color); /* Contact item H3: Dark Blue-Gray */
     margin-bottom: 0.5rem;
     font-weight: 600;
 }
@@ -906,8 +928,8 @@ body.dark-mode {
 
 /* Footer */
 .footer {
-    background: var(--logo-dark-blue); /* خلفية الفوتر أزرق داكن */
-    color: var(--logo-light-blue); /* لون النص أبيض/أزرق فاتح */
+    background: var(--primary-color); /* Footer background: Dark Blue-Gray */
+    color: var(--secondary-color); /* Footer text: White */
     padding: 60px 0 20px;
 }
 
@@ -921,12 +943,12 @@ body.dark-mode {
 .footer-section h3 {
     font-size: 1.3rem;
     margin-bottom: 1rem;
-    color: var(--logo-yellow-accent); /* عنوان قسم الفوتر أصفر/ذهبي */
+    color: var(--gold-like-accent); /* Footer section H3: Gold-like accent */
     font-weight: 600;
 }
 
 .footer-section p {
-    color: #bdc3c7; /* لون نص فاتح */
+    color: #bdc3c7; /* Light text for footer */
     line-height: 1.6;
     margin-bottom: 1rem;
 }
@@ -940,13 +962,13 @@ body.dark-mode {
 }
 
 .footer-section ul li a {
-    color: #bdc3c7; /* لون رابط الفوتر فاتح */
+    color: #bdc3c7; /* Footer link color */
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .footer-section ul li a:hover {
-    color: var(--logo-yellow-accent); /* لون رابط الفوتر عند التحويم أصفر/ذهبي */
+    color: var(--gold-like-accent); /* Footer link hover: Gold-like accent */
 }
 
 .social-links {
@@ -958,32 +980,32 @@ body.dark-mode {
 .social-links a {
     width: 40px;
     height: 40px;
-    background: var(--logo-yellow-accent); /* خلفية روابط التواصل أصفر/ذهبي */
+    background: var(--gold-like-accent); /* Social link background: Gold-like accent */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--logo-dark-blue); /* لون أيقونات التواصل أزرق داكن */
+    color: var(--primary-color); /* Social link icon: Dark Blue-Gray */
     text-decoration: none;
     transition: var(--transition);
 }
 
 .social-links a:hover {
-    background: #E0B022; /* درجة أغمق من الأصفر/الذهبي */
+    background: #A88F5C; /* Slightly darker gold on hover */
     transform: translateY(-2px);
 }
 
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
-    border-top: 1px solid #34495e; /* يمكن تعديله ليتناسق مع الألوان الجديدة */
+    border-top: 1px solid #526374; /* Footer bottom border: A mid-tone blue-gray */
     color: #bdc3c7;
 }
 
 /* Back to top & Whatsapp Button */
 .back-to-top, .whatsapp-btn {
-    background-color: var(--logo-yellow-accent); /* لون الأزرار العائمة أصفر/ذهبي */
-    color: var(--logo-dark-blue); /* لون أيقونة الأزرار العائمة أزرق داكن */
+    background-color: var(--gold-like-accent); /* Floating buttons background: Gold-like accent */
+    color: var(--primary-color); /* Floating buttons icon: Dark Blue-Gray */
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -1012,14 +1034,13 @@ body.dark-mode {
 
 .whatsapp-btn {
     right: 20px;
-    left: auto; /* لضمان الظهور على اليمين في RTL */
+    left: auto; /* Ensure it stays on the right in RTL */
 }
 
 .back-to-top:hover, .whatsapp-btn:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
-
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -1032,7 +1053,7 @@ body.dark-mode {
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background-color: var(--logo-light-blue); /* خلفية القائمة المنسدلة أبيض/أزرق فاتح */
+        background-color: var(--secondary-color); /* Mobile nav background: White */
         width: 100%;
         text-align: center;
         transition: 0.3s;
@@ -1049,11 +1070,11 @@ body.dark-mode {
     }
 
     .nav-link {
-        color: var(--logo-dark-blue); /* لون روابط القائمة في الجوال أزرق داكن */
+        color: var(--primary-color); /* Mobile nav links: Dark Blue-Gray */
     }
     .nav-link:hover,
     .nav-link.active {
-        color: var(--logo-yellow-accent);
+        color: var(--accent-color);
     }
     .nav-link::after {
         left: 50%;
@@ -1067,11 +1088,11 @@ body.dark-mode {
     }
 
     .hero-text {
-        order: 2; /* النص أسفل الصورة في الجوال */
+        order: 2; /* Text below image on mobile */
     }
 
     .hero-image {
-        order: 1; /* الصورة أعلى النص في الجوال */
+        order: 1; /* Image above text on mobile */
     }
 
     .hero-text h1 {
@@ -1083,7 +1104,7 @@ body.dark-mode {
     }
 
     .hero-buttons {
-        justify-content: center; /* توسيط الأزرار */
+        justify-content: center; /* Center buttons */
     }
 
     .hero-stats {
@@ -1222,7 +1243,7 @@ html {
 /* Page Header (for other pages like services, gallery, contact) */
 .page-header {
     background: var(--gradient-primary);
-    color: var(--logo-light-blue);
+    color: var(--secondary-color);
     padding: 120px 0 60px;
     text-align: center;
     position: relative;
@@ -1281,7 +1302,7 @@ html {
 
 .service-header {
     background: var(--gradient-primary);
-    color: var(--logo-light-blue);
+    color: var(--secondary-color);
     padding: 3rem;
     display: flex;
     align-items: center;
@@ -1291,7 +1312,7 @@ html {
 .service-icon {
     width: 100px;
     height: 100px;
-    background: rgba(var(--logo-light-blue), 0.2); /* خلفية أيقونة شفافة بيضاء/زرقاء فاتحة */
+    background: rgba(var(--secondary-color), 0.2); /* Semi-transparent white background */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1302,14 +1323,14 @@ html {
 
 .service-icon i {
     font-size: 3rem;
-    color: var(--logo-light-blue);
+    color: var(--secondary-color);
 }
 
 .service-title h2 {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    color: var(--logo-light-blue);
+    color: var(--secondary-color);
 }
 
 .service-title p {
@@ -1325,7 +1346,7 @@ html {
 .service-features h3,
 .service-process h3 {
     font-size: 1.8rem;
-    color: var(--logo-dark-blue);
+    color: var(--primary-color);
     margin-bottom: 2rem;
     font-weight: 600;
 }
@@ -1349,20 +1370,20 @@ html {
 }
 
 .feature-item:hover {
-    background: var(--logo-light-blue); /* يتغير إلى الأبيض/الأزرق الفاتح عند التحويم */
+    background: var(--secondary-color); /* Changes to white on hover */
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .feature-item i {
     font-size: 1.5rem;
-    color: var(--logo-yellow-accent);
+    color: var(--gold-like-accent);
     margin-top: 0.2rem;
 }
 
 .feature-item h4 {
     font-size: 1.2rem;
-    color: var(--logo-dark-blue);
+    color: var(--primary-color);
     margin-bottom: 0.5rem;
     font-weight: 600;
 }
@@ -1388,7 +1409,7 @@ html {
 }
 
 .step:hover {
-    background: var(--logo-light-blue); /* يتغير إلى الأبيض/الأزرق الفاتح عند التحويم */
+    background: var(--secondary-color); /* Changes to white on hover */
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
@@ -1396,8 +1417,8 @@ html {
 .step-number {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, var(--logo-yellow-accent), var(--logo-dark-blue));
-    color: var(--logo-light-blue);
+    background: linear-gradient(135deg, var(--gold-like-accent), var(--primary-color));
+    color: var(--secondary-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1410,7 +1431,7 @@ html {
 
 .step h4 {
     font-size: 1.3rem;
-    color: var(--logo-dark-blue);
+    color: var(--primary-color);
     margin-bottom: 1rem;
     font-weight: 600;
 }
@@ -1422,8 +1443,8 @@ html {
 
 /* CTA Section */
 .cta-section {
-    background: linear-gradient(135deg, var(--logo-yellow-accent) 0%, var(--logo-dark-blue) 100%);
-    color: var(--logo-light-blue);
+    background: linear-gradient(135deg, var(--gold-like-accent) 0%, var(--primary-color) 100%);
+    color: var(--secondary-color);
     padding: 80px 0;
     text-align: center;
     overflow: hidden;
@@ -1472,8 +1493,8 @@ html {
 /* Gallery Filter */
 .gallery-filter {
     padding: 40px 0;
-    background: var(--logo-light-blue);
-    border-bottom: 1px solid rgba(0,0,0,0.05); /* حدود خفيفة */
+    background: var(--secondary-color); /* Gallery filter background: White */
+    border-bottom: 1px solid rgba(0,0,0,0.05); /* Light border */
 }
 
 .filter-buttons {
@@ -1485,9 +1506,9 @@ html {
 
 .filter-btn {
     padding: 12px 24px;
-    border: 2px solid var(--logo-yellow-accent);
+    border: 2px solid var(--gold-like-accent);
     background: transparent;
-    color: var(--logo-yellow-accent);
+    color: var(--gold-like-accent);
     border-radius: 25px;
     font-weight: 600;
     cursor: pointer;
@@ -1498,10 +1519,10 @@ html {
 
 .filter-btn:hover,
 .filter-btn.active {
-    background: var(--logo-yellow-accent);
-    color: var(--logo-dark-blue); /* نص أزرق داكن عند التفعيل/التحويم */
+    background: var(--gold-like-accent);
+    color: var(--primary-color); /* Text on hover/active: Dark Blue-Gray */
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 199, 44, 0.2);
+    box-shadow: 0 5px 15px rgba(200, 170, 116, 0.2);
 }
 
 /* Gallery Showcase */
@@ -1550,7 +1571,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--logo-light-blue);
+    color: var(--secondary-color);
     font-size: 4rem;
     opacity: 0.8;
 }
@@ -1561,7 +1582,7 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(var(--logo-dark-blue), 0.8); /* تراكب أزرق داكن شفاف */
+    background: rgba(var(--primary-color), 0.8); /* Dark Blue-Gray transparent overlay */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1575,7 +1596,7 @@ html {
 
 .gallery-content {
     text-align: center;
-    color: var(--logo-light-blue);
+    color: var(--secondary-color);
     padding: 2rem;
     transform: translateY(20px);
     transition: transform 0.4s ease, opacity 0.4s ease;
@@ -1589,7 +1610,7 @@ html {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     font-weight: 600;
-    color: var(--logo-yellow-accent);
+    color: var(--gold-like-accent);
 }
 
 .gallery-content p {
@@ -1606,8 +1627,8 @@ html {
 }
 
 .tag {
-    background: var(--logo-yellow-accent);
-    color: var(--logo-dark-blue);
+    background: var(--gold-like-accent);
+    color: var(--primary-color);
     padding: 5px 12px;
     border-radius: 15px;
     font-size: 0.8rem;
@@ -1618,7 +1639,7 @@ html {
 /* Project Statistics */
 .project-stats {
     padding: 80px 0;
-    background: var(--logo-light-blue);
+    background: var(--secondary-color); /* Project stats background: White */
 }
 
 .stats-grid {
@@ -1645,7 +1666,7 @@ html {
 .stat-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, var(--logo-yellow-accent), var(--logo-dark-blue));
+    background: linear-gradient(135deg, var(--gold-like-accent), var(--primary-color));
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1656,12 +1677,12 @@ html {
 
 .stat-icon i {
     font-size: 2rem;
-    color: var(--logo-light-blue);
+    color: var(--secondary-color);
 }
 
 .stat-content h3 {
     font-size: 2.5rem;
-    color: var(--logo-dark-blue);
+    color: var(--primary-color);
     margin-bottom: 0.5rem;
     font-weight: 700;
 }
@@ -1686,7 +1707,7 @@ html {
 
 .contact-info-section h2 {
     font-size: 2rem;
-    color: var(--logo-dark-blue);
+    color: var(--primary-color);
     margin-bottom: 1rem;
     font-weight: 700;
 }
@@ -1723,7 +1744,7 @@ html {
 .method-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, var(--logo-yellow-accent), var(--logo-dark-blue));
+    background: linear-gradient(135deg, var(--gold-like-accent), var(--primary-color));
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1734,12 +1755,12 @@ html {
 
 .method-icon i {
     font-size: 1.5rem;
-    color: var(--logo-light-blue);
+    color: var(--secondary-color);
 }
 
 .method-content h3 {
     font-size: 1.3rem;
-    color: var(--logo-dark-blue);
+    color: var(--primary-color);
     margin-bottom: 0.5rem;
     font-weight: 600;
 }
@@ -1751,14 +1772,14 @@ html {
 }
 
 .method-note {
-    color: var(--logo-yellow-accent);
+    color: var(--gold-like-accent);
     font-size: 0.9rem;
     font-weight: 500;
 }
 
 /* Working hours removed */
 .working-hours {
-    display: none; /* إخفاء قسم ساعات العمل */
+    display: none; /* Hide working hours section */
 }
 
 .social-links-contact {
@@ -1770,7 +1791,7 @@ html {
 
 .social-links-contact h3 {
     font-size: 1.3rem;
-    color: var(--logo-dark-blue);
+    color: var(--primary-color);
     margin-bottom: 1.5rem;
     font-weight: 600;
 }
@@ -1789,13 +1810,13 @@ html {
     background: var(--light-gray);
     border-radius: 10px;
     text-decoration: none;
-    color: var(--logo-dark-blue);
+    color: var(--primary-color);
     transition: var(--transition);
 }
 
 .social-link:hover {
-    background: var(--logo-yellow-accent);
-    color: var(--logo-dark-blue);
+    background: var(--gold-like-accent);
+    color: var(--primary-color);
     transform: translateY(-2px);
 }
 
@@ -1805,8 +1826,8 @@ html {
 
 /* Footer */
 .footer {
-    background: var(--logo-dark-blue); /* خلفية الفوتر أزرق داكن */
-    color: var(--logo-light-blue); /* لون النص أبيض/أزرق فاتح */
+    background: var(--primary-color); /* Footer background: Dark Blue-Gray */
+    color: var(--secondary-color); /* Footer text: White */
     padding: 60px 0 20px;
 }
 
@@ -1820,12 +1841,12 @@ html {
 .footer-section h3 {
     font-size: 1.3rem;
     margin-bottom: 1rem;
-    color: var(--logo-yellow-accent); /* عنوان قسم الفوتر أصفر/ذهبي */
+    color: var(--gold-like-accent); /* Footer section H3: Gold-like accent */
     font-weight: 600;
 }
 
 .footer-section p {
-    color: #bdc3c7; /* لون نص فاتح */
+    color: #bdc3c7; /* Light text for footer */
     line-height: 1.6;
     margin-bottom: 1rem;
 }
@@ -1839,13 +1860,13 @@ html {
 }
 
 .footer-section ul li a {
-    color: #bdc3c7; /* لون رابط الفوتر فاتح */
+    color: #bdc3c7; /* Footer link color */
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .footer-section ul li a:hover {
-    color: var(--logo-yellow-accent); /* لون رابط الفوتر عند التحويم أصفر/ذهبي */
+    color: var(--gold-like-accent); /* Footer link hover: Gold-like accent */
 }
 
 .social-links {
@@ -1857,24 +1878,306 @@ html {
 .social-links a {
     width: 40px;
     height: 40px;
-    background: var(--logo-yellow-accent); /* خلفية روابط التواصل أصفر/ذهبي */
+    background: var(--gold-like-accent); /* Social link background: Gold-like accent */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--logo-dark-blue); /* لون أيقونات التواصل أزرق داكن */
+    color: var(--primary-color); /* Social link icon: Dark Blue-Gray */
     text-decoration: none;
     transition: var(--transition);
 }
 
 .social-links a:hover {
-    background: #E0B022; /* درجة أغمق من الأصفر/الذهبي */
+    background: #A88F5C; /* Slightly darker gold on hover */
     transform: translateY(-2px);
 }
 
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
-    border-top: 1px solid #34495e; /* يمكن تعديله ليتناسق مع الألوان الجديدة */
+    border-top: 1px solid #526374; /* Footer bottom border: A mid-tone blue-gray */
     color: #bdc3c7;
+}
+
+/* Back to top & Whatsapp Button */
+.back-to-top, .whatsapp-btn {
+    background-color: var(--gold-like-accent); /* Floating buttons background: Gold-like accent */
+    color: var(--primary-color); /* Floating buttons icon: Dark Blue-Gray */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    position: fixed;
+    bottom: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.back-to-top {
+    left: 20px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.whatsapp-btn {
+    right: 20px;
+    left: auto; /* Ensure it stays on the right in RTL */
+}
+
+.back-to-top:hover, .whatsapp-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.service-card,
+.product-card,
+.gallery-item {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Page Header (for other pages like services, gallery, contact) */
+.page-header {
+    background: var(--gradient-primary);
+    color: var(--secondary-color);
+    padding: 120px 0 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+.page-header .container {
+    position: relative;
+    z-index: 2;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Detailed Services */
+.detailed-services {
+    padding: 80px 0;
+    background: var(--light-gray);
+}
+
+.service-section {
+    background: white;
+    border-radius: 20px;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+.service-section:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.service-header {
+    background: var(--gradient-primary);
+    color: var(--secondary-color);
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.service-icon {
+    width: 100px;
+    height: 100px;
+    background: rgba(var(--secondary-color), 0.2); /* Semi-transparent white background */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.service-icon i {
+    font-size: 3rem;
+    color: var(--secondary-color);
+}
+
+.service-title h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.service-title p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.service-content {
+    padding: 3rem;
+}
+
+.service-features h3,
+.service-process h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--light-gray);
+    border-radius: 10px;
+    transition: var(--transition);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.feature-item:hover {
+    background: var(--secondary-color); /* Changes to white on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-item i {
+    font-size: 1.5rem;
+    color: var(--gold-like-accent);
+    margin-top: 0.2rem;
+}
+
+.feature-item h4 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.feature-item p {
+    color: #7f8c8d;
+    line-height: 1.6;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.step {
+    text-align: center;
+    padding: 2rem;
+    background: var(--light-gray);
+    border-radius: 15px;
+    transition: var(--transition);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.step:hover {
+    background: var(--secondary-color); /* Changes to white on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--gold-like-accent), var(--primary-color));
+    color: var(--secondary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+.step h4 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.step p {
+    color: #7f8c8d;
+    line-height: 1.6;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.service-card,
+.product-card,
+.gallery-item {
+    animation: fadeInUp 0.6s ease forwards;
 }
