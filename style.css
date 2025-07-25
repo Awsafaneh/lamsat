@@ -1,33 +1,31 @@
 /* Root Variables */
 :root {
-    --primary-color: #4A3C32; /* بني داكن/أرجواني من خلفية الشعار */
-    --secondary-color: #F8F5EE; /* بيج/كريمي من كلمة "لمسات" */
-    --accent-color: #A38A5A; /* ذهبي/برتقالي خفيف من الخطوط والأيقونة */
-    --highlight-color: #A38A5A; /* تم توحيدها مع الـ accent-color للأزرار والأيقونات */
+    --primary-color: #1C3F60; /* أزرق داكن من خلفية الشعار */
+    --secondary-color: #FFFFFF; /* أبيض/أزرق سماوي من الشعار والنص */
+    --accent-color: #FFC72C; /* أصفر/ذهبي من خطوط الشعار والنص */
+    --highlight-color: #FFC72C; /* تم توحيدها مع الـ accent-color للأزرار والأيقونات */
     --text-color: #333; /* لون نص داكن للقراءة الجيدة */
-    --light-gray: #f8f9fa; /* يمكن تعديله ليتناسق أكثر مع البني */
-    --dark-gray: #212529;
+    --light-gray: #f8f9fa; /* خلفية رمادية فاتحة لبعض الأقسام */
+    --dark-gray: #212529; /* استخدام عام للرمادي الداكن */
     --white: #ffffff;
     --transition: all 0.3s ease;
     --box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    --dark-bg: #211A15; /* بني أغمق للوضع الليلي */
-    --dark-card-bg: #352B24; /* بني متوسط للوضع الليلي */
+    --dark-bg: #142B41; /* درجة أغمق من الأزرق الداكن للوضع الليلي */
+    --dark-card-bg: #1F4B77; /* درجة متوسطة من الأزرق للوضع الليلي */
     --dark-text: #ffffff;
-    --dark-border: #4A3C32; /* حدود في الوضع الليلي */
+    --dark-border: #2C5A88; /* حدود في الوضع الليلي */
     --transition-smooth: all 0.3s ease-in-out;
     --hover-scale: scale(1.03); /* تكبير بسيط عند التحويم */
     --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* ظل خفيف للبطاقات */
     --button-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* ظل للأزرار */
-    --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, #352B24 100%); /* تدرج لوني يعتمد على البني */
+    --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, #142B41 100%); /* تدرج لوني يعتمد على الأزرق الداكن */
     --gradient-dark: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-card-bg) 100%);
-    --dark-color: #2c3e50; /* هذا اللون لا يتوافق مع اللوجو، يفضل استخدام درجة من البني الداكن */
-    --light-color: #ecf0f1; /* هذا اللون لا يتوافق مع اللوجو، يفضل استخدام درجة من البيج الفاتح */
-
-    /* الألوان المعدلة لتتناسب مع اللوجو */
-    --logo-dark-brown: #4A3C32;
-    --logo-light-beige: #F8F5EE;
-    --logo-gold-accent: #A38A5A;
-    --section-header-text: #352B24; /* بني داكن جداً لعناوين الأقسام */
+    
+    /* الألوان المعدلة لتتناسب مع اللوجو الأول بشكل صريح لسهولة التتبع */
+    --logo-dark-blue: #1C3F60;
+    --logo-light-blue: #FFFFFF; /* اللون الفاتح الرئيسي للوجو */
+    --logo-yellow-accent: #FFC72C;
+    --section-header-text: var(--primary-color); /* استخدام الأزرق الداكن لعناوين الأقسام */
 }
 
 /* Reset and Base Styles */
@@ -45,9 +43,15 @@ body {
     font-family: 'Cairo', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: var(--logo-light-beige); /* خلفية الجسم بيج فاتح */
+    background-color: var(--logo-light-blue); /* خلفية الجسم أبيض/أزرق فاتح */
     direction: rtl; /* للعربية */
     text-align: right; /* للعربية */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* Dark Mode */
@@ -62,7 +66,7 @@ body.dark-mode {
 }
 
 .dark-mode .logo-text h2 {
-    color: var(--logo-light-beige);
+    color: var(--logo-light-blue);
 }
 
 .dark-mode .nav-link {
@@ -71,15 +75,15 @@ body.dark-mode {
 
 .dark-mode .nav-link:hover,
 .dark-mode .nav-link.active {
-    color: var(--logo-gold-accent);
+    color: var(--logo-yellow-accent);
 }
 
 .dark-mode .nav-link::after {
-    background: var(--logo-gold-accent);
+    background: var(--logo-yellow-accent);
 }
 
 .dark-mode .hamburger span {
-    background: var(--logo-light-beige);
+    background: var(--logo-light-blue);
 }
 
 .dark-mode .hero {
@@ -93,18 +97,18 @@ body.dark-mode {
 }
 
 .dark-mode .hero-card {
-    background: rgba(var(--logo-dark-brown), 0.5); /* بني شفاف في الوضع الليلي */
-    border: 1px solid rgba(var(--logo-gold-accent), 0.3);
+    background: rgba(var(--logo-dark-blue), 0.5); /* أزرق شفاف في الوضع الليلي */
+    border: 1px solid rgba(var(--logo-yellow-accent), 0.3);
     color: var(--dark-text);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
 .dark-mode .hero-card i {
-    color: var(--logo-gold-accent);
+    color: var(--logo-yellow-accent);
 }
 
 .dark-mode .stat h3 {
-    color: var(--logo-gold-accent);
+    color: var(--logo-yellow-accent);
 }
 
 .dark-mode .stat p {
@@ -112,7 +116,7 @@ body.dark-mode {
 }
 
 .dark-mode .section-header h2 {
-    color: var(--logo-light-beige);
+    color: var(--logo-light-blue);
 }
 
 .dark-mode .section-header p {
@@ -130,7 +134,7 @@ body.dark-mode {
 }
 
 .dark-mode .service-card::before {
-    background: var(--logo-gold-accent);
+    background: var(--logo-yellow-accent);
 }
 
 .dark-mode .service-icon {
@@ -139,11 +143,11 @@ body.dark-mode {
 }
 
 .dark-mode .service-icon i {
-    color: var(--logo-gold-accent);
+    color: var(--logo-yellow-accent);
 }
 
 .dark-mode .service-card h3 {
-    color: var(--logo-light-beige);
+    color: var(--logo-light-blue);
 }
 
 .dark-mode .service-card p {
@@ -155,7 +159,7 @@ body.dark-mode {
 }
 
 .dark-mode .service-card ul li::before {
-    color: var(--logo-gold-accent);
+    color: var(--logo-yellow-accent);
 }
 
 .dark-mode .products {
@@ -168,16 +172,16 @@ body.dark-mode {
 }
 
 .dark-mode .product-image {
-    background: linear-gradient(135deg, var(--logo-gold-accent), var(--logo-dark-brown));
+    background: linear-gradient(135deg, var(--logo-yellow-accent), var(--logo-dark-blue));
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 .dark-mode .product-image i {
-    color: var(--logo-light-beige);
+    color: var(--logo-light-blue);
 }
 
 .dark-mode .product-card h3 {
-    color: var(--logo-light-beige);
+    color: var(--logo-light-blue);
 }
 
 .dark-mode .product-card p {
@@ -198,7 +202,7 @@ body.dark-mode {
 }
 
 .dark-mode .gallery-content h3 {
-    color: var(--logo-gold-accent);
+    color: var(--logo-yellow-accent);
 }
 
 .dark-mode .gallery-content p {
@@ -206,8 +210,8 @@ body.dark-mode {
 }
 
 .dark-mode .tag {
-    background: var(--logo-gold-accent);
-    color: var(--logo-dark-brown);
+    background: var(--logo-yellow-accent);
+    color: var(--logo-dark-blue);
 }
 
 .dark-mode .project-stats {
@@ -220,15 +224,15 @@ body.dark-mode {
 }
 
 .dark-mode .stat-icon {
-    background: linear-gradient(135deg, var(--logo-gold-accent), var(--logo-dark-brown));
+    background: linear-gradient(135deg, var(--logo-yellow-accent), var(--logo-dark-blue));
 }
 
 .dark-mode .stat-icon i {
-    color: var(--logo-light-beige);
+    color: var(--logo-light-blue);
 }
 
 .dark-mode .stat-content h3 {
-    color: var(--logo-light-beige);
+    color: var(--logo-light-blue);
 }
 
 .dark-mode .stat-content p {
@@ -240,7 +244,7 @@ body.dark-mode {
 }
 
 .dark-mode .contact-info-section h2 {
-    color: var(--logo-light-beige);
+    color: var(--logo-light-blue);
 }
 
 .dark-mode .contact-info-section p {
@@ -253,15 +257,15 @@ body.dark-mode {
 }
 
 .dark-mode .method-icon {
-    background: linear-gradient(135deg, var(--logo-gold-accent), var(--logo-dark-brown));
+    background: linear-gradient(135deg, var(--logo-yellow-accent), var(--logo-dark-blue));
 }
 
 .dark-mode .method-icon i {
-    color: var(--logo-light-beige);
+    color: var(--logo-light-blue);
 }
 
 .dark-mode .method-content h3 {
-    color: var(--logo-light-beige);
+    color: var(--logo-light-blue);
 }
 
 .dark-mode .method-content p {
@@ -269,7 +273,7 @@ body.dark-mode {
 }
 
 .dark-mode .method-note {
-    color: var(--logo-gold-accent);
+    color: var(--logo-yellow-accent);
 }
 
 .dark-mode .social-links-contact {
@@ -278,7 +282,7 @@ body.dark-mode {
 }
 
 .dark-mode .social-links-contact h3 {
-    color: var(--logo-light-beige);
+    color: var(--logo-light-blue);
 }
 
 .dark-mode .social-link {
@@ -287,8 +291,8 @@ body.dark-mode {
 }
 
 .dark-mode .social-link:hover {
-    background: var(--logo-gold-accent);
-    color: var(--logo-dark-brown);
+    background: var(--logo-yellow-accent);
+    color: var(--logo-dark-blue);
 }
 
 .dark-mode .footer {
@@ -297,7 +301,7 @@ body.dark-mode {
 }
 
 .dark-mode .footer-section h3 {
-    color: var(--logo-gold-accent);
+    color: var(--logo-yellow-accent);
 }
 
 .dark-mode .footer-section p,
@@ -306,17 +310,17 @@ body.dark-mode {
 }
 
 .dark-mode .footer-section ul li a:hover {
-    color: var(--logo-gold-accent);
+    color: var(--logo-yellow-accent);
 }
 
 .dark-mode .social-links a {
-    background: var(--logo-dark-brown);
-    color: var(--logo-light-beige);
+    background: var(--logo-dark-blue);
+    color: var(--logo-light-blue);
 }
 
 .dark-mode .social-links a:hover {
-    background: var(--logo-gold-accent);
-    color: var(--logo-dark-brown);
+    background: var(--logo-yellow-accent);
+    color: var(--logo-dark-blue);
 }
 
 .dark-mode .footer-bottom {
@@ -325,19 +329,12 @@ body.dark-mode {
 }
 
 .dark-mode .back-to-top {
-    background-color: var(--logo-gold-accent);
-    color: var(--logo-dark-brown);
+    background-color: var(--logo-yellow-accent);
+    color: var(--logo-dark-blue);
 }
 .dark-mode .whatsapp-btn {
-    background-color: var(--logo-gold-accent);
-    color: var(--logo-dark-brown);
-}
-
-/* Base Styles */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    background-color: var(--logo-yellow-accent);
+    color: var(--logo-dark-blue);
 }
 
 /* Header Styles */
@@ -345,7 +342,7 @@ body.dark-mode {
     position: fixed;
     top: 0;
     width: 100%;
-    background: var(--logo-light-beige); /* خلفية الهيدر بيج فاتح */
+    background: var(--logo-light-blue); /* خلفية الهيدر أبيض/أزرق فاتح */
     backdrop-filter: blur(10px);
     z-index: 1000;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
@@ -378,7 +375,7 @@ body.dark-mode {
 }
 
 .logo-text h2 {
-    color: var(--logo-dark-brown); /* لون اسم الشركة بني داكن */
+    color: var(--logo-dark-blue); /* لون اسم الشركة أزرق داكن */
     font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 0.2rem;
@@ -392,7 +389,7 @@ body.dark-mode {
 
 .nav-link {
     text-decoration: none;
-    color: var(--logo-dark-brown); /* لون روابط القائمة بني داكن */
+    color: var(--logo-dark-blue); /* لون روابط القائمة أزرق داكن */
     font-weight: 600;
     transition: color 0.3s ease;
     position: relative;
@@ -400,7 +397,7 @@ body.dark-mode {
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--logo-gold-accent); /* لون روابط القائمة عند التحويم أو النشاط ذهبي */
+    color: var(--logo-yellow-accent); /* لون روابط القائمة عند التحويم أو النشاط أصفر/ذهبي */
 }
 
 .nav-link::after {
@@ -410,7 +407,7 @@ body.dark-mode {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--logo-gold-accent);
+    background: var(--logo-yellow-accent);
     transition: width 0.3s ease;
 }
 
@@ -428,7 +425,7 @@ body.dark-mode {
 .hamburger span {
     width: 25px;
     height: 3px;
-    background: var(--logo-dark-brown);
+    background: var(--logo-dark-blue);
     margin: 3px 0;
     transition: 0.3s;
 }
@@ -439,8 +436,8 @@ body.dark-mode {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: var(--gradient-primary); /* خلفية الهيرو متدرجة من البني */
-    color: var(--logo-light-beige); /* لون النص بيج فاتح */
+    background: var(--gradient-primary); /* خلفية الهيرو متدرجة من الأزرق الداكن */
+    color: var(--logo-light-blue); /* لون النص أبيض/أزرق فاتح */
     padding: 120px 0 60px;
     position: relative;
     overflow: hidden;
@@ -474,7 +471,7 @@ body.dark-mode {
     font-weight: 700;
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    color: var(--logo-light-beige); /* لون العنوان بيج فاتح */
+    color: var(--logo-light-blue); /* لون العنوان أبيض/أزرق فاتح */
 }
 
 .hero-text h2 {
@@ -482,7 +479,7 @@ body.dark-mode {
     font-weight: 400;
     margin-bottom: 1.5rem;
     opacity: 0.9;
-    color: var(--logo-gold-accent); /* لون العنوان الفرعي ذهبي */
+    color: var(--logo-yellow-accent); /* لون العنوان الفرعي أصفر/ذهبي */
 }
 
 .hero-text p {
@@ -490,7 +487,7 @@ body.dark-mode {
     margin-bottom: 2rem;
     opacity: 0.8;
     line-height: 1.8;
-    color: var(--logo-light-beige); /* لون النص بيج فاتح */
+    color: var(--logo-light-blue); /* لون النص أبيض/أزرق فاتح */
 }
 
 .hero-buttons {
@@ -513,37 +510,37 @@ body.dark-mode {
 }
 
 .btn-primary {
-    background: var(--logo-gold-accent); /* زر أساسي ذهبي */
-    color: var(--logo-dark-brown); /* نص الزر بني داكن */
+    background: var(--logo-yellow-accent); /* زر أساسي أصفر/ذهبي */
+    color: var(--logo-dark-blue); /* نص الزر أزرق داكن */
 }
 
 .btn-primary:hover {
-    background: #8C754A; /* درجة أغمق قليلاً من الذهبي */
+    background: #E0B022; /* درجة أغمق قليلاً من الأصفر/الذهبي */
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(163, 138, 90, 0.3);
+    box-shadow: 0 10px 20px rgba(255, 199, 44, 0.3);
 }
 
 .btn-secondary {
     background: transparent;
-    color: var(--logo-light-beige); /* زر ثانوي نص بيج فاتح */
-    border: 2px solid var(--logo-light-beige); /* حدود بيج فاتح */
+    color: var(--logo-light-blue); /* زر ثانوي نص أبيض/أزرق فاتح */
+    border: 2px solid var(--logo-light-blue); /* حدود بيضاء/زرقاء فاتحة */
 }
 
 .btn-secondary:hover {
-    background: var(--logo-light-beige); /* خلفية بيج فاتح */
-    color: var(--logo-dark-brown); /* نص بني داكن */
+    background: var(--logo-light-blue); /* خلفية بيضاء/زرقاء فاتحة */
+    color: var(--logo-dark-blue); /* نص أزرق داكن */
     transform: translateY(-2px);
 }
 
 .btn-outline {
     background: transparent;
-    color: var(--logo-gold-accent); /* زر خارجي نص ذهبي */
-    border: 2px solid var(--logo-gold-accent); /* حدود ذهبية */
+    color: var(--logo-yellow-accent); /* زر خارجي نص أصفر/ذهبي */
+    border: 2px solid var(--logo-yellow-accent); /* حدود صفراء/ذهبية */
 }
 
 .btn-outline:hover {
-    background: var(--logo-gold-accent); /* خلفية ذهبية */
-    color: var(--logo-dark-brown); /* نص بني داكن */
+    background: var(--logo-yellow-accent); /* خلفية صفراء/ذهبية */
+    color: var(--logo-dark-blue); /* نص أزرق داكن */
     transform: translateY(-2px);
 }
 
@@ -555,16 +552,16 @@ body.dark-mode {
 }
 
 .hero-card {
-    background: rgba(var(--logo-dark-brown), 0.3); /* بني شفاف */
+    background: rgba(var(--logo-dark-blue), 0.3); /* أزرق شفاف */
     backdrop-filter: blur(10px);
     padding: 3rem;
     border-radius: 20px;
     text-align: center;
-    border: 1px solid rgba(var(--logo-gold-accent), 0.2); /* حدود ذهبية شفافة */
+    border: 1px solid rgba(var(--logo-yellow-accent), 0.2); /* حدود صفراء/ذهبية شفافة */
     transition: transform 0.6s ease;
     transform-style: preserve-3d;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    color: var(--logo-light-beige); /* نص بيج فاتح */
+    color: var(--logo-light-blue); /* نص أبيض/أزرق فاتح */
 }
 
 .hero-card:hover {
@@ -574,7 +571,7 @@ body.dark-mode {
 .hero-card i {
     font-size: 4rem;
     margin-bottom: 1rem;
-    color: var(--logo-gold-accent); /* أيقونة ذهبية */
+    color: var(--logo-yellow-accent); /* أيقونة صفراء/ذهبية */
     text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
 }
 
@@ -594,13 +591,13 @@ body.dark-mode {
 
 .stat {
     text-align: center;
-    color: var(--logo-light-beige); /* نص الإحصائيات بيج فاتح */
+    color: var(--logo-light-blue); /* نص الإحصائيات أبيض/أزرق فاتح */
 }
 
 .stat h3 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--logo-gold-accent); /* رقم الإحصائية ذهبي */
+    color: var(--logo-yellow-accent); /* رقم الإحصائية أصفر/ذهبي */
     margin-bottom: 0.5rem;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
 }
@@ -618,7 +615,7 @@ body.dark-mode {
 
 .section-header h2 {
     font-size: 2.5rem;
-    color: var(--logo-dark-brown); /* عنوان القسم بني داكن */
+    color: var(--logo-dark-blue); /* عنوان القسم أزرق داكن */
     margin-bottom: 1rem;
     font-weight: 700;
 }
@@ -633,7 +630,7 @@ body.dark-mode {
 /* Services Section */
 .services {
     padding: 80px 0;
-    background: var(--logo-light-beige); /* خلفية الخدمات بيج فاتح */
+    background: var(--logo-light-blue); /* خلفية الخدمات أبيض/أزرق فاتح */
 }
 
 .services-grid {
@@ -648,7 +645,7 @@ body.dark-mode {
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
-    border: 1px solid var(--logo-light-beige); /* حدود بيج فاتح */
+    border: 1px solid var(--logo-light-blue); /* حدود بيضاء/زرقاء فاتحة */
     position: relative;
     overflow: hidden;
 }
@@ -660,7 +657,7 @@ body.dark-mode {
     left: 0;
     width: 100%;
     height: 5px;
-    background: var(--logo-gold-accent); /* شريط ذهبي علوي */
+    background: var(--logo-yellow-accent); /* شريط أصفر/ذهبي علوي */
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s ease-out;
@@ -690,12 +687,12 @@ body.dark-mode {
 
 .service-icon i {
     font-size: 2rem;
-    color: var(--logo-light-beige); /* أيقونة بيج فاتح */
+    color: var(--logo-light-blue); /* أيقونة بيضاء/زرقاء فاتحة */
 }
 
 .service-card h3 {
     font-size: 1.5rem;
-    color: var(--logo-dark-brown); /* عنوان الخدمة بني داكن */
+    color: var(--logo-dark-blue); /* عنوان الخدمة أزرق داكن */
     margin-bottom: 1rem;
     font-weight: 600;
 }
@@ -721,7 +718,7 @@ body.dark-mode {
     content: '✓';
     position: absolute;
     right: 0;
-    color: var(--logo-gold-accent); /* علامة الصح ذهبية */
+    color: var(--logo-yellow-accent); /* علامة الصح صفراء/ذهبية */
     font-weight: bold;
 }
 
@@ -754,7 +751,7 @@ body.dark-mode {
 .product-image {
     width: 100px;
     height: 100px;
-    background: linear-gradient(135deg, var(--logo-gold-accent), var(--logo-dark-brown)); /* خلفية أيقونة متدرجة ذهبي وبني */
+    background: linear-gradient(135deg, var(--logo-yellow-accent), var(--logo-dark-blue)); /* خلفية أيقونة متدرجة صفراء/ذهبية وزرقاء داكنة */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -765,12 +762,12 @@ body.dark-mode {
 
 .product-image i {
     font-size: 2.5rem;
-    color: var(--logo-light-beige); /* أيقونة بيج فاتح */
+    color: var(--logo-light-blue); /* أيقونة بيضاء/زرقاء فاتحة */
 }
 
 .product-card h3 {
     font-size: 1.3rem;
-    color: var(--logo-dark-brown); /* عنوان المنتج بني داكن */
+    color: var(--logo-dark-blue); /* عنوان المنتج أزرق داكن */
     margin-bottom: 1rem;
     font-weight: 600;
 }
@@ -784,7 +781,7 @@ body.dark-mode {
 /* Gallery Section */
 .gallery {
     padding: 80px 0;
-    background: var(--logo-light-beige); /* خلفية المعرض بيج فاتح */
+    background: var(--logo-light-blue); /* خلفية المعرض أبيض/أزرق فاتح */
 }
 
 .gallery-grid {
@@ -813,13 +810,13 @@ body.dark-mode {
 
 /* Unique gradients for gallery items based on new palette */
 .gallery-item:nth-child(1) {
-    background: linear-gradient(135deg, var(--logo-dark-brown) 0%, #352B24 100%); /* بني أغمق */
+    background: linear-gradient(135deg, var(--logo-dark-blue) 0%, #142B41 100%); /* أزرق أغمق */
 }
 .gallery-item:nth-child(2) {
-    background: linear-gradient(135deg, var(--logo-gold-accent) 0%, var(--logo-dark-brown) 100%); /* ذهبي لبني */
+    background: linear-gradient(135deg, var(--logo-yellow-accent) 0%, var(--logo-dark-blue) 100%); /* أصفر لأزرق */
 }
 .gallery-item:nth-child(3) {
-    background: linear-gradient(135deg, var(--logo-light-beige) 0%, var(--logo-gold-accent) 100%); /* بيج لذهبي */
+    background: linear-gradient(135deg, var(--logo-light-blue) 0%, var(--logo-yellow-accent) 100%); /* أبيض لأصفر */
 }
 .gallery-item:nth-child(4) {
     background: linear-gradient(135deg, #7F8C8D 0%, #5E6971 100%); /* يمكن تعديله لألوان متناسقة مع اللوجو */
@@ -828,13 +825,13 @@ body.dark-mode {
     background: linear-gradient(135deg, #A8A8A8 0%, #8E8E8E 100%); /* يمكن تعديله لألوان متناسقة مع اللوجو */
 }
 .gallery-item:nth-child(6) {
-    background: linear-gradient(135deg, var(--logo-dark-brown) 0%, var(--logo-gold-accent) 100%); /* بني لذهبي */
+    background: linear-gradient(135deg, var(--logo-dark-blue) 0%, var(--logo-yellow-accent) 100%); /* أزرق لأصفر */
 }
 
 
 .gallery-content {
     text-align: center;
-    color: var(--logo-light-beige); /* نص محتوى المعرض بيج فاتح */
+    color: var(--logo-light-blue); /* نص محتوى المعرض أبيض/أزرق فاتح */
     z-index: 2;
     position: relative;
     opacity: 0;
@@ -884,10 +881,10 @@ body.dark-mode {
 
 .contact-item i {
     font-size: 1.5rem;
-    color: var(--logo-gold-accent); /* أيقونة الاتصال ذهبية */
+    color: var(--logo-yellow-accent); /* أيقونة الاتصال صفراء/ذهبية */
     width: 50px;
     height: 50px;
-    background: rgba(163, 138, 90, 0.1); /* خلفية أيقونة شفافة ذهبية */
+    background: rgba(255, 199, 44, 0.1); /* خلفية أيقونة شفافة صفراء/ذهبية */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -895,7 +892,7 @@ body.dark-mode {
 }
 
 .contact-item h3 {
-    color: var(--logo-dark-brown); /* عنوان الاتصال بني داكن */
+    color: var(--logo-dark-blue); /* عنوان الاتصال أزرق داكن */
     margin-bottom: 0.5rem;
     font-weight: 600;
 }
@@ -909,8 +906,8 @@ body.dark-mode {
 
 /* Footer */
 .footer {
-    background: var(--logo-dark-brown); /* خلفية الفوتر بني داكن */
-    color: var(--logo-light-beige); /* لون النص بيج فاتح */
+    background: var(--logo-dark-blue); /* خلفية الفوتر أزرق داكن */
+    color: var(--logo-light-blue); /* لون النص أبيض/أزرق فاتح */
     padding: 60px 0 20px;
 }
 
@@ -924,7 +921,7 @@ body.dark-mode {
 .footer-section h3 {
     font-size: 1.3rem;
     margin-bottom: 1rem;
-    color: var(--logo-gold-accent); /* عنوان قسم الفوتر ذهبي */
+    color: var(--logo-yellow-accent); /* عنوان قسم الفوتر أصفر/ذهبي */
     font-weight: 600;
 }
 
@@ -949,7 +946,7 @@ body.dark-mode {
 }
 
 .footer-section ul li a:hover {
-    color: var(--logo-gold-accent); /* لون رابط الفوتر عند التحويم ذهبي */
+    color: var(--logo-yellow-accent); /* لون رابط الفوتر عند التحويم أصفر/ذهبي */
 }
 
 .social-links {
@@ -961,18 +958,18 @@ body.dark-mode {
 .social-links a {
     width: 40px;
     height: 40px;
-    background: var(--logo-gold-accent); /* خلفية روابط التواصل ذهبي */
+    background: var(--logo-yellow-accent); /* خلفية روابط التواصل أصفر/ذهبي */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--logo-dark-brown); /* لون أيقونات التواصل بني داكن */
+    color: var(--logo-dark-blue); /* لون أيقونات التواصل أزرق داكن */
     text-decoration: none;
     transition: var(--transition);
 }
 
 .social-links a:hover {
-    background: #8C754A; /* درجة أغمق من الذهبي */
+    background: #E0B022; /* درجة أغمق من الأصفر/الذهبي */
     transform: translateY(-2px);
 }
 
@@ -985,8 +982,8 @@ body.dark-mode {
 
 /* Back to top & Whatsapp Button */
 .back-to-top, .whatsapp-btn {
-    background-color: var(--logo-gold-accent); /* لون الأزرار العائمة ذهبي */
-    color: var(--logo-dark-brown); /* لون أيقونة الأزرار العائمة بني داكن */
+    background-color: var(--logo-yellow-accent); /* لون الأزرار العائمة أصفر/ذهبي */
+    color: var(--logo-dark-blue); /* لون أيقونة الأزرار العائمة أزرق داكن */
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -1035,7 +1032,7 @@ body.dark-mode {
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background-color: var(--logo-light-beige); /* خلفية القائمة المنسدلة بيج فاتح */
+        background-color: var(--logo-light-blue); /* خلفية القائمة المنسدلة أبيض/أزرق فاتح */
         width: 100%;
         text-align: center;
         transition: 0.3s;
@@ -1052,11 +1049,11 @@ body.dark-mode {
     }
 
     .nav-link {
-        color: var(--logo-dark-brown); /* لون روابط القائمة في الجوال بني داكن */
+        color: var(--logo-dark-blue); /* لون روابط القائمة في الجوال أزرق داكن */
     }
     .nav-link:hover,
     .nav-link.active {
-        color: var(--logo-gold-accent);
+        color: var(--logo-yellow-accent);
     }
     .nav-link::after {
         left: 50%;
@@ -1225,7 +1222,7 @@ html {
 /* Page Header (for other pages like services, gallery, contact) */
 .page-header {
     background: var(--gradient-primary);
-    color: var(--logo-light-beige);
+    color: var(--logo-light-blue);
     padding: 120px 0 60px;
     text-align: center;
     position: relative;
@@ -1265,7 +1262,7 @@ html {
 /* Detailed Services */
 .detailed-services {
     padding: 80px 0;
-    background: var(--light-gray); /* يمكن تعديله ليتناسق مع البيج الفاتح */
+    background: var(--light-gray);
 }
 
 .service-section {
@@ -1284,7 +1281,7 @@ html {
 
 .service-header {
     background: var(--gradient-primary);
-    color: var(--logo-light-beige);
+    color: var(--logo-light-blue);
     padding: 3rem;
     display: flex;
     align-items: center;
@@ -1294,7 +1291,7 @@ html {
 .service-icon {
     width: 100px;
     height: 100px;
-    background: rgba(var(--logo-light-beige), 0.2); /* خلفية أيقونة شفافة بيج فاتح */
+    background: rgba(var(--logo-light-blue), 0.2); /* خلفية أيقونة شفافة بيضاء/زرقاء فاتحة */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1305,14 +1302,14 @@ html {
 
 .service-icon i {
     font-size: 3rem;
-    color: var(--logo-light-beige);
+    color: var(--logo-light-blue);
 }
 
 .service-title h2 {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    color: var(--logo-light-beige);
+    color: var(--logo-light-blue);
 }
 
 .service-title p {
@@ -1328,7 +1325,7 @@ html {
 .service-features h3,
 .service-process h3 {
     font-size: 1.8rem;
-    color: var(--logo-dark-brown);
+    color: var(--logo-dark-blue);
     margin-bottom: 2rem;
     font-weight: 600;
 }
@@ -1352,20 +1349,20 @@ html {
 }
 
 .feature-item:hover {
-    background: var(--logo-light-beige); /* يتغير إلى البيج الفاتح عند التحويم */
+    background: var(--logo-light-blue); /* يتغير إلى الأبيض/الأزرق الفاتح عند التحويم */
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .feature-item i {
     font-size: 1.5rem;
-    color: var(--logo-gold-accent);
+    color: var(--logo-yellow-accent);
     margin-top: 0.2rem;
 }
 
 .feature-item h4 {
     font-size: 1.2rem;
-    color: var(--logo-dark-brown);
+    color: var(--logo-dark-blue);
     margin-bottom: 0.5rem;
     font-weight: 600;
 }
@@ -1391,7 +1388,7 @@ html {
 }
 
 .step:hover {
-    background: var(--logo-light-beige); /* يتغير إلى البيج الفاتح عند التحويم */
+    background: var(--logo-light-blue); /* يتغير إلى الأبيض/الأزرق الفاتح عند التحويم */
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
@@ -1399,8 +1396,8 @@ html {
 .step-number {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, var(--logo-gold-accent), var(--logo-dark-brown));
-    color: var(--logo-light-beige);
+    background: linear-gradient(135deg, var(--logo-yellow-accent), var(--logo-dark-blue));
+    color: var(--logo-light-blue);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1413,7 +1410,7 @@ html {
 
 .step h4 {
     font-size: 1.3rem;
-    color: var(--logo-dark-brown);
+    color: var(--logo-dark-blue);
     margin-bottom: 1rem;
     font-weight: 600;
 }
@@ -1425,8 +1422,8 @@ html {
 
 /* CTA Section */
 .cta-section {
-    background: linear-gradient(135deg, var(--logo-gold-accent) 0%, var(--logo-dark-brown) 100%);
-    color: var(--logo-light-beige);
+    background: linear-gradient(135deg, var(--logo-yellow-accent) 0%, var(--logo-dark-blue) 100%);
+    color: var(--logo-light-blue);
     padding: 80px 0;
     text-align: center;
     overflow: hidden;
@@ -1475,7 +1472,7 @@ html {
 /* Gallery Filter */
 .gallery-filter {
     padding: 40px 0;
-    background: var(--logo-light-beige);
+    background: var(--logo-light-blue);
     border-bottom: 1px solid rgba(0,0,0,0.05); /* حدود خفيفة */
 }
 
@@ -1488,9 +1485,9 @@ html {
 
 .filter-btn {
     padding: 12px 24px;
-    border: 2px solid var(--logo-gold-accent);
+    border: 2px solid var(--logo-yellow-accent);
     background: transparent;
-    color: var(--logo-gold-accent);
+    color: var(--logo-yellow-accent);
     border-radius: 25px;
     font-weight: 600;
     cursor: pointer;
@@ -1501,10 +1498,10 @@ html {
 
 .filter-btn:hover,
 .filter-btn.active {
-    background: var(--logo-gold-accent);
-    color: var(--logo-dark-brown); /* نص بني داكن عند التفعيل/التحويم */
+    background: var(--logo-yellow-accent);
+    color: var(--logo-dark-blue); /* نص أزرق داكن عند التفعيل/التحويم */
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(163, 138, 90, 0.2);
+    box-shadow: 0 5px 15px rgba(255, 199, 44, 0.2);
 }
 
 /* Gallery Showcase */
@@ -1553,7 +1550,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--logo-light-beige);
+    color: var(--logo-light-blue);
     font-size: 4rem;
     opacity: 0.8;
 }
@@ -1564,7 +1561,7 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(var(--logo-dark-brown), 0.8); /* تراكب بني داكن شفاف */
+    background: rgba(var(--logo-dark-blue), 0.8); /* تراكب أزرق داكن شفاف */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1578,7 +1575,7 @@ html {
 
 .gallery-content {
     text-align: center;
-    color: var(--logo-light-beige);
+    color: var(--logo-light-blue);
     padding: 2rem;
     transform: translateY(20px);
     transition: transform 0.4s ease, opacity 0.4s ease;
@@ -1592,7 +1589,7 @@ html {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     font-weight: 600;
-    color: var(--logo-gold-accent);
+    color: var(--logo-yellow-accent);
 }
 
 .gallery-content p {
@@ -1609,8 +1606,8 @@ html {
 }
 
 .tag {
-    background: var(--logo-gold-accent);
-    color: var(--logo-dark-brown);
+    background: var(--logo-yellow-accent);
+    color: var(--logo-dark-blue);
     padding: 5px 12px;
     border-radius: 15px;
     font-size: 0.8rem;
@@ -1621,7 +1618,7 @@ html {
 /* Project Statistics */
 .project-stats {
     padding: 80px 0;
-    background: var(--logo-light-beige);
+    background: var(--logo-light-blue);
 }
 
 .stats-grid {
@@ -1648,7 +1645,7 @@ html {
 .stat-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, var(--logo-gold-accent), var(--logo-dark-brown));
+    background: linear-gradient(135deg, var(--logo-yellow-accent), var(--logo-dark-blue));
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1659,12 +1656,12 @@ html {
 
 .stat-icon i {
     font-size: 2rem;
-    color: var(--logo-light-beige);
+    color: var(--logo-light-blue);
 }
 
 .stat-content h3 {
     font-size: 2.5rem;
-    color: var(--logo-dark-brown);
+    color: var(--logo-dark-blue);
     margin-bottom: 0.5rem;
     font-weight: 700;
 }
@@ -1689,7 +1686,7 @@ html {
 
 .contact-info-section h2 {
     font-size: 2rem;
-    color: var(--logo-dark-brown);
+    color: var(--logo-dark-blue);
     margin-bottom: 1rem;
     font-weight: 700;
 }
@@ -1726,7 +1723,7 @@ html {
 .method-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, var(--logo-gold-accent), var(--logo-dark-brown));
+    background: linear-gradient(135deg, var(--logo-yellow-accent), var(--logo-dark-blue));
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1737,12 +1734,12 @@ html {
 
 .method-icon i {
     font-size: 1.5rem;
-    color: var(--logo-light-beige);
+    color: var(--logo-light-blue);
 }
 
 .method-content h3 {
     font-size: 1.3rem;
-    color: var(--logo-dark-brown);
+    color: var(--logo-dark-blue);
     margin-bottom: 0.5rem;
     font-weight: 600;
 }
@@ -1754,7 +1751,7 @@ html {
 }
 
 .method-note {
-    color: var(--logo-gold-accent);
+    color: var(--logo-yellow-accent);
     font-size: 0.9rem;
     font-weight: 500;
 }
@@ -1773,7 +1770,7 @@ html {
 
 .social-links-contact h3 {
     font-size: 1.3rem;
-    color: var(--logo-dark-brown);
+    color: var(--logo-dark-blue);
     margin-bottom: 1.5rem;
     font-weight: 600;
 }
@@ -1792,16 +1789,92 @@ html {
     background: var(--light-gray);
     border-radius: 10px;
     text-decoration: none;
-    color: var(--logo-dark-brown);
+    color: var(--logo-dark-blue);
     transition: var(--transition);
 }
 
 .social-link:hover {
-    background: var(--logo-gold-accent);
-    color: var(--logo-dark-brown);
+    background: var(--logo-yellow-accent);
+    color: var(--logo-dark-blue);
     transform: translateY(-2px);
 }
 
 .social-link i {
     font-size: 1.2rem;
+}
+
+/* Footer */
+.footer {
+    background: var(--logo-dark-blue); /* خلفية الفوتر أزرق داكن */
+    color: var(--logo-light-blue); /* لون النص أبيض/أزرق فاتح */
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--logo-yellow-accent); /* عنوان قسم الفوتر أصفر/ذهبي */
+    font-weight: 600;
+}
+
+.footer-section p {
+    color: #bdc3c7; /* لون نص فاتح */
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: #bdc3c7; /* لون رابط الفوتر فاتح */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: var(--logo-yellow-accent); /* لون رابط الفوتر عند التحويم أصفر/ذهبي */
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    background: var(--logo-yellow-accent); /* خلفية روابط التواصل أصفر/ذهبي */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--logo-dark-blue); /* لون أيقونات التواصل أزرق داكن */
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background: #E0B022; /* درجة أغمق من الأصفر/الذهبي */
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #34495e; /* يمكن تعديله ليتناسق مع الألوان الجديدة */
+    color: #bdc3c7;
 }
