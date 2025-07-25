@@ -1,27 +1,33 @@
 /* Root Variables */
 :root {
-    --primary-color: #A38A5A; /* لون ذهبي/بني مطفأ من خلفية الشعار */
-    --secondary-color: #5E4D30; /* بني داكن/رمادي من عناصر الشعار الداكنة */
-    --accent-color: #D4C19A; /* ذهبي/بيج أفتح لعناصر الخلفية أو الثانوية */
-    --highlight-color: #C8795A; /* برتقالي محروق/طوبي للعناصر الجذابة (الأزرار، الأيقونات) */
+    --primary-color: #4A3C32; /* بني داكن/أرجواني من خلفية الشعار */
+    --secondary-color: #F8F5EE; /* بيج/كريمي من كلمة "لمسات" */
+    --accent-color: #A38A5A; /* ذهبي/برتقالي خفيف من الخطوط والأيقونة */
+    --highlight-color: #A38A5A; /* تم توحيدها مع الـ accent-color للأزرار والأيقونات */
     --text-color: #333; /* لون نص داكن للقراءة الجيدة */
-    --light-gray: #f8f9fa;
+    --light-gray: #f8f9fa; /* يمكن تعديله ليتناسق أكثر مع البني */
     --dark-gray: #212529;
     --white: #ffffff;
     --transition: all 0.3s ease;
     --box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    --dark-bg: #1a1a1a;
-    --dark-card-bg: #2d2d2d;
+    --dark-bg: #211A15; /* بني أغمق للوضع الليلي */
+    --dark-card-bg: #352B24; /* بني متوسط للوضع الليلي */
     --dark-text: #ffffff;
-    --dark-border: #404040;
+    --dark-border: #4A3C32; /* حدود في الوضع الليلي */
     --transition-smooth: all 0.3s ease-in-out;
     --hover-scale: scale(1.03); /* تكبير بسيط عند التحويم */
     --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* ظل خفيف للبطاقات */
     --button-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* ظل للأزرار */
-    --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, #352B24 100%); /* تدرج لوني يعتمد على البني */
     --gradient-dark: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-card-bg) 100%);
-    --dark-color: #2c3e50; /* لون داكن لشعار الرأس لتباين جيد */
-    --light-color: #ecf0f1;
+    --dark-color: #2c3e50; /* هذا اللون لا يتوافق مع اللوجو، يفضل استخدام درجة من البني الداكن */
+    --light-color: #ecf0f1; /* هذا اللون لا يتوافق مع اللوجو، يفضل استخدام درجة من البيج الفاتح */
+
+    /* الألوان المعدلة لتتناسب مع اللوجو */
+    --logo-dark-brown: #4A3C32;
+    --logo-light-beige: #F8F5EE;
+    --logo-gold-accent: #A38A5A;
+    --section-header-text: #352B24; /* بني داكن جداً لعناوين الأقسام */
 }
 
 /* Reset and Base Styles */
@@ -39,9 +45,295 @@ body {
     font-family: 'Cairo', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: var(--light-gray);
+    background-color: var(--logo-light-beige); /* خلفية الجسم بيج فاتح */
+    direction: rtl; /* للعربية */
+    text-align: right; /* للعربية */
 }
 
+/* Dark Mode */
+body.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+.dark-mode .header {
+    background: var(--dark-bg);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .logo-text h2 {
+    color: var(--logo-light-beige);
+}
+
+.dark-mode .nav-link {
+    color: var(--dark-text);
+}
+
+.dark-mode .nav-link:hover,
+.dark-mode .nav-link.active {
+    color: var(--logo-gold-accent);
+}
+
+.dark-mode .nav-link::after {
+    background: var(--logo-gold-accent);
+}
+
+.dark-mode .hamburger span {
+    background: var(--logo-light-beige);
+}
+
+.dark-mode .hero {
+    background: var(--gradient-dark);
+}
+
+.dark-mode .hero-text h1,
+.dark-mode .hero-text h2,
+.dark-mode .hero-text p {
+    color: var(--dark-text);
+}
+
+.dark-mode .hero-card {
+    background: rgba(var(--logo-dark-brown), 0.5); /* بني شفاف في الوضع الليلي */
+    border: 1px solid rgba(var(--logo-gold-accent), 0.3);
+    color: var(--dark-text);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.dark-mode .hero-card i {
+    color: var(--logo-gold-accent);
+}
+
+.dark-mode .stat h3 {
+    color: var(--logo-gold-accent);
+}
+
+.dark-mode .stat p {
+    color: var(--dark-text);
+}
+
+.dark-mode .section-header h2 {
+    color: var(--logo-light-beige);
+}
+
+.dark-mode .section-header p {
+    color: #999;
+}
+
+.dark-mode .services {
+    background: var(--dark-bg);
+}
+
+.dark-mode .service-card {
+    background: var(--dark-card-bg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--dark-border);
+}
+
+.dark-mode .service-card::before {
+    background: var(--logo-gold-accent);
+}
+
+.dark-mode .service-icon {
+    background: var(--gradient-dark);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.dark-mode .service-icon i {
+    color: var(--logo-gold-accent);
+}
+
+.dark-mode .service-card h3 {
+    color: var(--logo-light-beige);
+}
+
+.dark-mode .service-card p {
+    color: #ccc;
+}
+
+.dark-mode .service-card ul li {
+    color: #bbb;
+}
+
+.dark-mode .service-card ul li::before {
+    color: var(--logo-gold-accent);
+}
+
+.dark-mode .products {
+    background: var(--dark-bg);
+}
+
+.dark-mode .product-card {
+    background: var(--dark-card-bg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .product-image {
+    background: linear-gradient(135deg, var(--logo-gold-accent), var(--logo-dark-brown));
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.dark-mode .product-image i {
+    color: var(--logo-light-beige);
+}
+
+.dark-mode .product-card h3 {
+    color: var(--logo-light-beige);
+}
+
+.dark-mode .product-card p {
+    color: #ccc;
+}
+
+.dark-mode .gallery {
+    background: var(--dark-bg);
+}
+
+.dark-mode .gallery-item {
+    background: linear-gradient(135deg, var(--dark-card-bg) 0%, var(--dark-bg) 100%);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .gallery-overlay {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.dark-mode .gallery-content h3 {
+    color: var(--logo-gold-accent);
+}
+
+.dark-mode .gallery-content p {
+    color: var(--dark-text);
+}
+
+.dark-mode .tag {
+    background: var(--logo-gold-accent);
+    color: var(--logo-dark-brown);
+}
+
+.dark-mode .project-stats {
+    background: var(--dark-bg);
+}
+
+.dark-mode .stat-item {
+    background: var(--dark-card-bg);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .stat-icon {
+    background: linear-gradient(135deg, var(--logo-gold-accent), var(--logo-dark-brown));
+}
+
+.dark-mode .stat-icon i {
+    color: var(--logo-light-beige);
+}
+
+.dark-mode .stat-content h3 {
+    color: var(--logo-light-beige);
+}
+
+.dark-mode .stat-content p {
+    color: #ccc;
+}
+
+.dark-mode .contact-page {
+    background: var(--dark-bg);
+}
+
+.dark-mode .contact-info-section h2 {
+    color: var(--logo-light-beige);
+}
+
+.dark-mode .contact-info-section p {
+    color: #ccc;
+}
+
+.dark-mode .contact-method {
+    background: var(--dark-card-bg);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .method-icon {
+    background: linear-gradient(135deg, var(--logo-gold-accent), var(--logo-dark-brown));
+}
+
+.dark-mode .method-icon i {
+    color: var(--logo-light-beige);
+}
+
+.dark-mode .method-content h3 {
+    color: var(--logo-light-beige);
+}
+
+.dark-mode .method-content p {
+    color: #ccc;
+}
+
+.dark-mode .method-note {
+    color: var(--logo-gold-accent);
+}
+
+.dark-mode .social-links-contact {
+    background: var(--dark-card-bg);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .social-links-contact h3 {
+    color: var(--logo-light-beige);
+}
+
+.dark-mode .social-link {
+    background: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+.dark-mode .social-link:hover {
+    background: var(--logo-gold-accent);
+    color: var(--logo-dark-brown);
+}
+
+.dark-mode .footer {
+    background: var(--dark-bg);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .footer-section h3 {
+    color: var(--logo-gold-accent);
+}
+
+.dark-mode .footer-section p,
+.dark-mode .footer-section ul li a {
+    color: #ccc;
+}
+
+.dark-mode .footer-section ul li a:hover {
+    color: var(--logo-gold-accent);
+}
+
+.dark-mode .social-links a {
+    background: var(--logo-dark-brown);
+    color: var(--logo-light-beige);
+}
+
+.dark-mode .social-links a:hover {
+    background: var(--logo-gold-accent);
+    color: var(--logo-dark-brown);
+}
+
+.dark-mode .footer-bottom {
+    color: #ccc;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .back-to-top {
+    background-color: var(--logo-gold-accent);
+    color: var(--logo-dark-brown);
+}
+.dark-mode .whatsapp-btn {
+    background-color: var(--logo-gold-accent);
+    color: var(--logo-dark-brown);
+}
+
+/* Base Styles */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -53,10 +345,10 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--logo-light-beige); /* خلفية الهيدر بيج فاتح */
     backdrop-filter: blur(10px);
     z-index: 1000;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
 }
 
 .navbar {
@@ -79,24 +371,17 @@ body {
 }
 
 .logo img {
-    height: 45px; /* تم تعديل حجم الشعار ليكون أصغر وأكثر تناسباً */
+    height: 45px;
     width: auto;
     border-radius: 8px;
     object-fit: contain;
 }
 
 .logo-text h2 {
-    color: var(--dark-color);
+    color: var(--logo-dark-brown); /* لون اسم الشركة بني داكن */
     font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 0.2rem;
-}
-
-.logo-text span {
-    /* تم إزالة هذا العنصر من HTML، ولكن تم الاحتفاظ بقاعدته CSS هنا إذا تم إعادته */
-    color: var(--highlight-color);
-    font-size: 0.9rem;
-    font-weight: 400;
 }
 
 .nav-menu {
@@ -107,7 +392,7 @@ body {
 
 .nav-link {
     text-decoration: none;
-    color: var(--dark-color);
+    color: var(--logo-dark-brown); /* لون روابط القائمة بني داكن */
     font-weight: 600;
     transition: color 0.3s ease;
     position: relative;
@@ -115,7 +400,7 @@ body {
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--highlight-color);
+    color: var(--logo-gold-accent); /* لون روابط القائمة عند التحويم أو النشاط ذهبي */
 }
 
 .nav-link::after {
@@ -125,7 +410,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--highlight-color);
+    background: var(--logo-gold-accent);
     transition: width 0.3s ease;
 }
 
@@ -143,7 +428,7 @@ body {
 .hamburger span {
     width: 25px;
     height: 3px;
-    background: var(--dark-color);
+    background: var(--logo-dark-brown);
     margin: 3px 0;
     transition: 0.3s;
 }
@@ -154,8 +439,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: var(--gradient-primary);
-    color: white;
+    background: var(--gradient-primary); /* خلفية الهيرو متدرجة من البني */
+    color: var(--logo-light-beige); /* لون النص بيج فاتح */
     padding: 120px 0 60px;
     position: relative;
     overflow: hidden;
@@ -189,6 +474,7 @@ body {
     font-weight: 700;
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: var(--logo-light-beige); /* لون العنوان بيج فاتح */
 }
 
 .hero-text h2 {
@@ -196,6 +482,7 @@ body {
     font-weight: 400;
     margin-bottom: 1.5rem;
     opacity: 0.9;
+    color: var(--logo-gold-accent); /* لون العنوان الفرعي ذهبي */
 }
 
 .hero-text p {
@@ -203,6 +490,7 @@ body {
     margin-bottom: 2rem;
     opacity: 0.8;
     line-height: 1.8;
+    color: var(--logo-light-beige); /* لون النص بيج فاتح */
 }
 
 .hero-buttons {
@@ -225,37 +513,37 @@ body {
 }
 
 .btn-primary {
-    background: var(--highlight-color);
-    color: white;
+    background: var(--logo-gold-accent); /* زر أساسي ذهبي */
+    color: var(--logo-dark-brown); /* نص الزر بني داكن */
 }
 
 .btn-primary:hover {
-    background: var(--secondary-color);
+    background: #8C754A; /* درجة أغمق قليلاً من الذهبي */
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(200, 121, 90, 0.3);
+    box-shadow: 0 10px 20px rgba(163, 138, 90, 0.3);
 }
 
 .btn-secondary {
     background: transparent;
-    color: white;
-    border: 2px solid white;
+    color: var(--logo-light-beige); /* زر ثانوي نص بيج فاتح */
+    border: 2px solid var(--logo-light-beige); /* حدود بيج فاتح */
 }
 
 .btn-secondary:hover {
-    background: white;
-    color: var(--primary-color);
+    background: var(--logo-light-beige); /* خلفية بيج فاتح */
+    color: var(--logo-dark-brown); /* نص بني داكن */
     transform: translateY(-2px);
 }
 
 .btn-outline {
     background: transparent;
-    color: var(--highlight-color);
-    border: 2px solid var(--highlight-color);
+    color: var(--logo-gold-accent); /* زر خارجي نص ذهبي */
+    border: 2px solid var(--logo-gold-accent); /* حدود ذهبية */
 }
 
 .btn-outline:hover {
-    background: var(--highlight-color);
-    color: white;
+    background: var(--logo-gold-accent); /* خلفية ذهبية */
+    color: var(--logo-dark-brown); /* نص بني داكن */
     transform: translateY(-2px);
 }
 
@@ -267,15 +555,16 @@ body {
 }
 
 .hero-card {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(var(--logo-dark-brown), 0.3); /* بني شفاف */
     backdrop-filter: blur(10px);
     padding: 3rem;
     border-radius: 20px;
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(var(--logo-gold-accent), 0.2); /* حدود ذهبية شفافة */
     transition: transform 0.6s ease;
     transform-style: preserve-3d;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    color: var(--logo-light-beige); /* نص بيج فاتح */
 }
 
 .hero-card:hover {
@@ -285,7 +574,7 @@ body {
 .hero-card i {
     font-size: 4rem;
     margin-bottom: 1rem;
-    color: var(--accent-color);
+    color: var(--logo-gold-accent); /* أيقونة ذهبية */
     text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
 }
 
@@ -305,12 +594,13 @@ body {
 
 .stat {
     text-align: center;
+    color: var(--logo-light-beige); /* نص الإحصائيات بيج فاتح */
 }
 
 .stat h3 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--accent-color);
+    color: var(--logo-gold-accent); /* رقم الإحصائية ذهبي */
     margin-bottom: 0.5rem;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
 }
@@ -328,7 +618,7 @@ body {
 
 .section-header h2 {
     font-size: 2.5rem;
-    color: var(--dark-color);
+    color: var(--logo-dark-brown); /* عنوان القسم بني داكن */
     margin-bottom: 1rem;
     font-weight: 700;
 }
@@ -343,7 +633,7 @@ body {
 /* Services Section */
 .services {
     padding: 80px 0;
-    background: white;
+    background: var(--logo-light-beige); /* خلفية الخدمات بيج فاتح */
 }
 
 .services-grid {
@@ -353,12 +643,12 @@ body {
 }
 
 .service-card {
-    background: white;
+    background: white; /* خلفية بطاقة الخدمة بيضاء */
     padding: 2.5rem;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
-    border: 1px solid var(--light-color);
+    border: 1px solid var(--logo-light-beige); /* حدود بيج فاتح */
     position: relative;
     overflow: hidden;
 }
@@ -370,7 +660,7 @@ body {
     left: 0;
     width: 100%;
     height: 5px;
-    background: var(--highlight-color);
+    background: var(--logo-gold-accent); /* شريط ذهبي علوي */
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s ease-out;
@@ -389,7 +679,7 @@ body {
 .service-icon {
     width: 80px;
     height: 80px;
-    background: var(--gradient-primary);
+    background: var(--gradient-primary); /* خلفية أيقونة متدرجة */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -400,12 +690,12 @@ body {
 
 .service-icon i {
     font-size: 2rem;
-    color: white;
+    color: var(--logo-light-beige); /* أيقونة بيج فاتح */
 }
 
 .service-card h3 {
     font-size: 1.5rem;
-    color: var(--dark-color);
+    color: var(--logo-dark-brown); /* عنوان الخدمة بني داكن */
     margin-bottom: 1rem;
     font-weight: 600;
 }
@@ -431,14 +721,14 @@ body {
     content: '✓';
     position: absolute;
     right: 0;
-    color: var(--highlight-color);
+    color: var(--logo-gold-accent); /* علامة الصح ذهبية */
     font-weight: bold;
 }
 
 /* Products Section */
 .products {
     padding: 80px 0;
-    background: var(--light-gray);
+    background: var(--light-gray); /* خلفية المنتجات رمادي فاتح */
 }
 
 .products-grid {
@@ -448,7 +738,7 @@ body {
 }
 
 .product-card {
-    background: white;
+    background: white; /* خلفية بطاقة المنتج بيضاء */
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
@@ -464,7 +754,7 @@ body {
 .product-image {
     width: 100px;
     height: 100px;
-    background: linear-gradient(135deg, var(--highlight-color), var(--secondary-color));
+    background: linear-gradient(135deg, var(--logo-gold-accent), var(--logo-dark-brown)); /* خلفية أيقونة متدرجة ذهبي وبني */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -475,12 +765,12 @@ body {
 
 .product-image i {
     font-size: 2.5rem;
-    color: white;
+    color: var(--logo-light-beige); /* أيقونة بيج فاتح */
 }
 
 .product-card h3 {
     font-size: 1.3rem;
-    color: var(--dark-color);
+    color: var(--logo-dark-brown); /* عنوان المنتج بني داكن */
     margin-bottom: 1rem;
     font-weight: 600;
 }
@@ -494,7 +784,7 @@ body {
 /* Gallery Section */
 .gallery {
     padding: 80px 0;
-    background: white;
+    background: var(--logo-light-beige); /* خلفية المعرض بيج فاتح */
 }
 
 .gallery-grid {
@@ -505,7 +795,7 @@ body {
 
 .gallery-item {
     height: 250px;
-    background: var(--gradient-primary);
+    background: var(--gradient-primary); /* خلفية عنصر المعرض متدرجة */
     border-radius: 15px;
     display: flex;
     align-items: center;
@@ -523,28 +813,28 @@ body {
 
 /* Unique gradients for gallery items based on new palette */
 .gallery-item:nth-child(1) {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: linear-gradient(135deg, var(--logo-dark-brown) 0%, #352B24 100%); /* بني أغمق */
 }
 .gallery-item:nth-child(2) {
-    background: linear-gradient(135deg, var(--highlight-color) 0%, var(--secondary-color) 100%);
+    background: linear-gradient(135deg, var(--logo-gold-accent) 0%, var(--logo-dark-brown) 100%); /* ذهبي لبني */
 }
 .gallery-item:nth-child(3) {
-    background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
+    background: linear-gradient(135deg, var(--logo-light-beige) 0%, var(--logo-gold-accent) 100%); /* بيج لذهبي */
 }
 .gallery-item:nth-child(4) {
-    background: linear-gradient(135deg, #7F8C8D 0%, #5E6971 100%);
+    background: linear-gradient(135deg, #7F8C8D 0%, #5E6971 100%); /* يمكن تعديله لألوان متناسقة مع اللوجو */
 }
 .gallery-item:nth-child(5) {
-    background: linear-gradient(135deg, #A8A8A8 0%, #8E8E8E 100%);
+    background: linear-gradient(135deg, #A8A8A8 0%, #8E8E8E 100%); /* يمكن تعديله لألوان متناسقة مع اللوجو */
 }
 .gallery-item:nth-child(6) {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--highlight-color) 100%);
+    background: linear-gradient(135deg, var(--logo-dark-brown) 0%, var(--logo-gold-accent) 100%); /* بني لذهبي */
 }
 
 
 .gallery-content {
     text-align: center;
-    color: white;
+    color: var(--logo-light-beige); /* نص محتوى المعرض بيج فاتح */
     z-index: 2;
     position: relative;
     opacity: 0;
@@ -581,7 +871,7 @@ body {
     align-items: center;
     gap: 1rem;
     padding: 1.5rem;
-    background: white;
+    background: white; /* خلفية عنصر الاتصال بيضاء */
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
@@ -594,10 +884,10 @@ body {
 
 .contact-item i {
     font-size: 1.5rem;
-    color: var(--highlight-color);
+    color: var(--logo-gold-accent); /* أيقونة الاتصال ذهبية */
     width: 50px;
     height: 50px;
-    background: rgba(200, 121, 90, 0.1);
+    background: rgba(163, 138, 90, 0.1); /* خلفية أيقونة شفافة ذهبية */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -605,7 +895,7 @@ body {
 }
 
 .contact-item h3 {
-    color: var(--dark-color);
+    color: var(--logo-dark-brown); /* عنوان الاتصال بني داكن */
     margin-bottom: 0.5rem;
     font-weight: 600;
 }
@@ -619,8 +909,8 @@ body {
 
 /* Footer */
 .footer {
-    background: var(--dark-color);
-    color: white;
+    background: var(--logo-dark-brown); /* خلفية الفوتر بني داكن */
+    color: var(--logo-light-beige); /* لون النص بيج فاتح */
     padding: 60px 0 20px;
 }
 
@@ -634,12 +924,12 @@ body {
 .footer-section h3 {
     font-size: 1.3rem;
     margin-bottom: 1rem;
-    color: var(--highlight-color);
+    color: var(--logo-gold-accent); /* عنوان قسم الفوتر ذهبي */
     font-weight: 600;
 }
 
 .footer-section p {
-    color: #bdc3c7;
+    color: #bdc3c7; /* لون نص فاتح */
     line-height: 1.6;
     margin-bottom: 1rem;
 }
@@ -653,13 +943,13 @@ body {
 }
 
 .footer-section ul li a {
-    color: #bdc3c7;
+    color: #bdc3c7; /* لون رابط الفوتر فاتح */
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .footer-section ul li a:hover {
-    color: var(--highlight-color);
+    color: var(--logo-gold-accent); /* لون رابط الفوتر عند التحويم ذهبي */
 }
 
 .social-links {
@@ -671,27 +961,68 @@ body {
 .social-links a {
     width: 40px;
     height: 40px;
-    background: #34495e;
+    background: var(--logo-gold-accent); /* خلفية روابط التواصل ذهبي */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: var(--logo-dark-brown); /* لون أيقونات التواصل بني داكن */
     text-decoration: none;
     transition: var(--transition);
 }
 
 .social-links a:hover {
-    background: var(--highlight-color);
+    background: #8C754A; /* درجة أغمق من الذهبي */
     transform: translateY(-2px);
 }
 
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
-    border-top: 1px solid #34495e;
+    border-top: 1px solid #34495e; /* يمكن تعديله ليتناسق مع الألوان الجديدة */
     color: #bdc3c7;
 }
+
+/* Back to top & Whatsapp Button */
+.back-to-top, .whatsapp-btn {
+    background-color: var(--logo-gold-accent); /* لون الأزرار العائمة ذهبي */
+    color: var(--logo-dark-brown); /* لون أيقونة الأزرار العائمة بني داكن */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    position: fixed;
+    bottom: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.back-to-top {
+    left: 20px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.whatsapp-btn {
+    right: 20px;
+    left: auto; /* لضمان الظهور على اليمين في RTL */
+}
+
+.back-to-top:hover, .whatsapp-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -704,7 +1035,7 @@ body {
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background-color: white;
+        background-color: var(--logo-light-beige); /* خلفية القائمة المنسدلة بيج فاتح */
         width: 100%;
         text-align: center;
         transition: 0.3s;
@@ -716,10 +1047,34 @@ body {
         left: 0;
     }
 
+    .nav-menu li {
+        margin: 15px 0;
+    }
+
+    .nav-link {
+        color: var(--logo-dark-brown); /* لون روابط القائمة في الجوال بني داكن */
+    }
+    .nav-link:hover,
+    .nav-link.active {
+        color: var(--logo-gold-accent);
+    }
+    .nav-link::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 2rem;
+    }
+
+    .hero-text {
+        order: 2; /* النص أسفل الصورة في الجوال */
+    }
+
+    .hero-image {
+        order: 1; /* الصورة أعلى النص في الجوال */
     }
 
     .hero-text h1 {
@@ -728,6 +1083,10 @@ body {
 
     .hero-text h2 {
         font-size: 1.5rem;
+    }
+
+    .hero-buttons {
+        justify-content: center; /* توسيط الأزرار */
     }
 
     .hero-stats {
@@ -752,6 +1111,10 @@ body {
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
+    }
+
+    .footer-section .social-links {
+        justify-content: center;
     }
 }
 
@@ -859,10 +1222,10 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Page Header */
+/* Page Header (for other pages like services, gallery, contact) */
 .page-header {
     background: var(--gradient-primary);
-    color: white;
+    color: var(--logo-light-beige);
     padding: 120px 0 60px;
     text-align: center;
     position: relative;
@@ -902,7 +1265,7 @@ html {
 /* Detailed Services */
 .detailed-services {
     padding: 80px 0;
-    background: var(--light-gray);
+    background: var(--light-gray); /* يمكن تعديله ليتناسق مع البيج الفاتح */
 }
 
 .service-section {
@@ -921,7 +1284,7 @@ html {
 
 .service-header {
     background: var(--gradient-primary);
-    color: white;
+    color: var(--logo-light-beige);
     padding: 3rem;
     display: flex;
     align-items: center;
@@ -931,7 +1294,7 @@ html {
 .service-icon {
     width: 100px;
     height: 100px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(var(--logo-light-beige), 0.2); /* خلفية أيقونة شفافة بيج فاتح */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -942,13 +1305,14 @@ html {
 
 .service-icon i {
     font-size: 3rem;
-    color: white;
+    color: var(--logo-light-beige);
 }
 
 .service-title h2 {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
+    color: var(--logo-light-beige);
 }
 
 .service-title p {
@@ -964,7 +1328,7 @@ html {
 .service-features h3,
 .service-process h3 {
     font-size: 1.8rem;
-    color: var(--dark-color);
+    color: var(--logo-dark-brown);
     margin-bottom: 2rem;
     font-weight: 600;
 }
@@ -988,20 +1352,20 @@ html {
 }
 
 .feature-item:hover {
-    background: var(--light-color);
+    background: var(--logo-light-beige); /* يتغير إلى البيج الفاتح عند التحويم */
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .feature-item i {
     font-size: 1.5rem;
-    color: var(--highlight-color);
+    color: var(--logo-gold-accent);
     margin-top: 0.2rem;
 }
 
 .feature-item h4 {
     font-size: 1.2rem;
-    color: var(--dark-color);
+    color: var(--logo-dark-brown);
     margin-bottom: 0.5rem;
     font-weight: 600;
 }
@@ -1027,7 +1391,7 @@ html {
 }
 
 .step:hover {
-    background: var(--light-color);
+    background: var(--logo-light-beige); /* يتغير إلى البيج الفاتح عند التحويم */
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
@@ -1035,8 +1399,8 @@ html {
 .step-number {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, var(--highlight-color), var(--secondary-color));
-    color: white;
+    background: linear-gradient(135deg, var(--logo-gold-accent), var(--logo-dark-brown));
+    color: var(--logo-light-beige);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1049,7 +1413,7 @@ html {
 
 .step h4 {
     font-size: 1.3rem;
-    color: var(--dark-color);
+    color: var(--logo-dark-brown);
     margin-bottom: 1rem;
     font-weight: 600;
 }
@@ -1061,8 +1425,8 @@ html {
 
 /* CTA Section */
 .cta-section {
-    background: linear-gradient(135deg, var(--highlight-color) 0%, var(--secondary-color) 100%);
-    color: white;
+    background: linear-gradient(135deg, var(--logo-gold-accent) 0%, var(--logo-dark-brown) 100%);
+    color: var(--logo-light-beige);
     padding: 80px 0;
     text-align: center;
     overflow: hidden;
@@ -1111,8 +1475,8 @@ html {
 /* Gallery Filter */
 .gallery-filter {
     padding: 40px 0;
-    background: white;
-    border-bottom: 1px solid var(--light-color);
+    background: var(--logo-light-beige);
+    border-bottom: 1px solid rgba(0,0,0,0.05); /* حدود خفيفة */
 }
 
 .filter-buttons {
@@ -1124,9 +1488,9 @@ html {
 
 .filter-btn {
     padding: 12px 24px;
-    border: 2px solid var(--highlight-color);
+    border: 2px solid var(--logo-gold-accent);
     background: transparent;
-    color: var(--highlight-color);
+    color: var(--logo-gold-accent);
     border-radius: 25px;
     font-weight: 600;
     cursor: pointer;
@@ -1137,10 +1501,10 @@ html {
 
 .filter-btn:hover,
 .filter-btn.active {
-    background: var(--highlight-color);
-    color: white;
+    background: var(--logo-gold-accent);
+    color: var(--logo-dark-brown); /* نص بني داكن عند التفعيل/التحويم */
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(200, 121, 90, 0.2);
+    box-shadow: 0 5px 15px rgba(163, 138, 90, 0.2);
 }
 
 /* Gallery Showcase */
@@ -1189,7 +1553,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: var(--logo-light-beige);
     font-size: 4rem;
     opacity: 0.8;
 }
@@ -1200,7 +1564,7 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(var(--logo-dark-brown), 0.8); /* تراكب بني داكن شفاف */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1214,7 +1578,7 @@ html {
 
 .gallery-content {
     text-align: center;
-    color: white;
+    color: var(--logo-light-beige);
     padding: 2rem;
     transform: translateY(20px);
     transition: transform 0.4s ease, opacity 0.4s ease;
@@ -1228,6 +1592,7 @@ html {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     font-weight: 600;
+    color: var(--logo-gold-accent);
 }
 
 .gallery-content p {
@@ -1244,8 +1609,8 @@ html {
 }
 
 .tag {
-    background: var(--highlight-color);
-    color: white;
+    background: var(--logo-gold-accent);
+    color: var(--logo-dark-brown);
     padding: 5px 12px;
     border-radius: 15px;
     font-size: 0.8rem;
@@ -1256,7 +1621,7 @@ html {
 /* Project Statistics */
 .project-stats {
     padding: 80px 0;
-    background: white;
+    background: var(--logo-light-beige);
 }
 
 .stats-grid {
@@ -1268,14 +1633,14 @@ html {
 .stat-item {
     text-align: center;
     padding: 2rem;
-    background: var(--light-gray);
+    background: white;
     border-radius: 15px;
     transition: var(--transition);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
 .stat-item:hover {
-    background: var(--light-color);
+    background: var(--light-gray);
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
@@ -1283,7 +1648,7 @@ html {
 .stat-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, var(--highlight-color), var(--secondary-color));
+    background: linear-gradient(135deg, var(--logo-gold-accent), var(--logo-dark-brown));
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1294,12 +1659,12 @@ html {
 
 .stat-icon i {
     font-size: 2rem;
-    color: white;
+    color: var(--logo-light-beige);
 }
 
 .stat-content h3 {
     font-size: 2.5rem;
-    color: var(--dark-color);
+    color: var(--logo-dark-brown);
     margin-bottom: 0.5rem;
     font-weight: 700;
 }
@@ -1324,7 +1689,7 @@ html {
 
 .contact-info-section h2 {
     font-size: 2rem;
-    color: var(--dark-color);
+    color: var(--logo-dark-brown);
     margin-bottom: 1rem;
     font-weight: 700;
 }
@@ -1361,7 +1726,7 @@ html {
 .method-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, var(--highlight-color), var(--secondary-color));
+    background: linear-gradient(135deg, var(--logo-gold-accent), var(--logo-dark-brown));
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1372,12 +1737,12 @@ html {
 
 .method-icon i {
     font-size: 1.5rem;
-    color: white;
+    color: var(--logo-light-beige);
 }
 
 .method-content h3 {
     font-size: 1.3rem;
-    color: var(--dark-color);
+    color: var(--logo-dark-brown);
     margin-bottom: 0.5rem;
     font-weight: 600;
 }
@@ -1389,7 +1754,7 @@ html {
 }
 
 .method-note {
-    color: var(--highlight-color);
+    color: var(--logo-gold-accent);
     font-size: 0.9rem;
     font-weight: 500;
 }
@@ -1408,7 +1773,7 @@ html {
 
 .social-links-contact h3 {
     font-size: 1.3rem;
-    color: var(--dark-color);
+    color: var(--logo-dark-brown);
     margin-bottom: 1.5rem;
     font-weight: 600;
 }
@@ -1427,237 +1792,16 @@ html {
     background: var(--light-gray);
     border-radius: 10px;
     text-decoration: none;
-    color: var(--dark-color);
+    color: var(--logo-dark-brown);
     transition: var(--transition);
 }
 
 .social-link:hover {
-    background: var(--highlight-color);
-    color: white;
+    background: var(--logo-gold-accent);
+    color: var(--logo-dark-brown);
     transform: translateY(-2px);
 }
 
 .social-link i {
     font-size: 1.2rem;
-}
-
-/* No contact form on contact page anymore */
-
-/* Footer */
-.footer {
-    background: var(--dark-color);
-    color: white;
-    padding: 60px 0 20px;
-}
-
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-
-.footer-section h3 {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-    color: var(--highlight-color);
-    font-weight: 600;
-}
-
-.footer-section p {
-    color: #bdc3c7;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-}
-
-.footer-section ul {
-    list-style: none;
-}
-
-.footer-section ul li {
-    margin-bottom: 0.5rem;
-}
-
-.footer-section ul li a {
-    color: #bdc3c7;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-section ul li a:hover {
-    color: var(--highlight-color);
-}
-
-.social-links {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.social-links a {
-    width: 40px;
-    height: 40px;
-    background: #34495e;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-.social-links a:hover {
-    background: var(--highlight-color);
-    transform: translateY(-2px);
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 2rem;
-    border-top: 1px solid #34495e;
-    color: #bdc3c7;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hamburger {
-        display: flex;
-    }
-
-    .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 70px;
-        flex-direction: column;
-        background-color: white;
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-        padding: 2rem 0;
-    }
-
-    .nav-menu.active {
-        left: 0;
-    }
-
-    .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 2rem;
-    }
-
-    .hero-text h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-text h2 {
-        font-size: 1.5rem;
-    }
-
-    .hero-stats {
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    .contact-content {
-        grid-template-columns: 1fr; /* Only info section remains */
-        gap: 2rem;
-    }
-
-    .services-grid,
-    .products-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-text h1 {
-        font-size: 2rem;
-    }
-
-    .section-header h2 {
-        font-size: 2rem;
-    }
-
-    .btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    /* Contact page responsive */
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .form-row {
-        grid-template-columns: 1fr;
-    }
-
-    .social-grid {
-        grid-template-columns: 1fr;
-    }
-
-    /* Services page responsive */
-    .service-header {
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
-    }
-
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .process-steps {
-        grid-template-columns: 1fr;
-    }
-
-    /* Gallery page responsive */
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .filter-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .filter-btn {
-        width: 100%;
-        max-width: 200px;
-    }
-
-    /* Stats responsive */
-    .stats-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    /* FAQ responsive */
-    .faq-question {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-    }
-
-    .faq-question h3 {
-        font-size: 1rem;
-    }
 }
